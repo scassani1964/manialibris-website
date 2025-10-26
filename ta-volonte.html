@@ -1,10 +1,12 @@
-﻿<!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="fr">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="Ta Volonté - Livre sur l'IA, le pouvoir divin et la convergence NBIC par Stéphane Cassani">
-    <title>Ta Volonté - Mania Libris</title>
+    <meta name="description" content="TA VOLONTÉ explore la convergence entre foi chrétienne, intelligence artificielle et eschatologie. Un parcours théologique profond sur le pouvoir, l'âme humaine et l'annihilationnisme biblique.">
+    <meta name="keywords" content="théologie chrétienne, eschatologie, annihilationnisme, intelligence artificielle, foi et technologie, Stéphane Jean Cassani, Mania Libris">
+    <meta name="author" content="Stéphane Jean Cassani">
+    <title>TA VOLONTÉ - Dialogues sur l'IA, le Pouvoir et l'Âme Humaine | Mania Libris</title>
     <style>
         * {
             margin: 0;
@@ -13,183 +15,270 @@
         }
 
         body {
-            font-family: 'Georgia', serif;
-            background-color: #000;
-            color: #f8f8f8;
+            font-family: Georgia, "Times New Roman", Times, serif;
+            background-color: #000000;
+            color: #FFFFFF;
             line-height: 1.6;
         }
 
-        nav {
-            background: rgba(0, 0, 0, 0.95);
-            padding: 1.5rem 2rem;
-            position: sticky;
-            top: 0;
-            z-index: 1000;
+        header {
+            background-color: #000000;
+            padding: 2rem 0;
             border-bottom: 2px solid #DAA520;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 2rem;
+        }
+
+        h1 {
+            font-size: 2.5rem;
+            color: #DAA520;
+            text-align: center;
+            margin-bottom: 1rem;
+        }
+
+        nav {
+            text-align: center;
+            margin-top: 1.5rem;
         }
 
         nav ul {
             list-style: none;
             display: flex;
             justify-content: center;
-            flex-wrap: wrap;
             gap: 2rem;
         }
 
         nav a {
             color: #DAA520;
             text-decoration: none;
-            font-weight: bold;
             font-size: 1.1rem;
-            transition: all 0.3s;
-            padding: 0.5rem 1rem;
-            border-radius: 5px;
+            transition: color 0.3s ease;
         }
 
         nav a:hover {
-            background: #DAA520;
-            color: #000;
+            color: #FFFFFF;
         }
 
         .hero {
             text-align: center;
-            padding: 4rem 2rem;
-            background: linear-gradient(135deg, #1a1a1a 0%, #000 100%);
-            border-bottom: 3px solid #DAA520;
+            padding: 4rem 0;
+            border-bottom: 1px solid #DAA520;
         }
 
-        h1 {
+        .hero h2 {
+            font-size: 2.2rem;
             color: #DAA520;
-            font-size: 3.5rem;
             margin-bottom: 1rem;
-            text-shadow: 2px 2px 4px rgba(218, 165, 32, 0.3);
         }
 
-        .subtitle {
+        .hero h3 {
             font-size: 1.5rem;
-            color: #ccc;
+            color: #FFFFFF;
+            font-weight: normal;
+            margin-bottom: 1.5rem;
             font-style: italic;
+        }
+
+        .hero .author {
+            font-size: 1.3rem;
+            color: #DAA520;
             margin-bottom: 2rem;
         }
 
-        .container {
-            max-width: 1000px;
-            margin: 0 auto;
-            padding: 3rem 2rem;
+        .book-cover {
+            text-align: center;
+            margin: 3rem 0;
         }
 
-        .section {
-            background: #1a1a1a;
-            border-radius: 10px;
-            padding: 3rem;
-            margin-bottom: 3rem;
-            border-left: 5px solid #DAA520;
+        .book-cover img {
+            max-width: 400px;
+            width: 100%;
+            height: auto;
+            border: 3px solid #DAA520;
+            box-shadow: 0 10px 30px rgba(218, 165, 32, 0.3);
+        }
+
+        section {
+            padding: 3rem 0;
+            border-bottom: 1px solid #DAA520;
+        }
+
+        section:last-of-type {
+            border-bottom: none;
         }
 
         h2 {
+            font-size: 2rem;
             color: #DAA520;
-            font-size: 2.5rem;
             margin-bottom: 1.5rem;
         }
 
         h3 {
+            font-size: 1.5rem;
             color: #DAA520;
-            font-size: 1.8rem;
-            margin-top: 2rem;
             margin-bottom: 1rem;
         }
 
         p {
+            margin-bottom: 1.5rem;
             font-size: 1.1rem;
-            line-height: 1.8;
-            margin-bottom: 1rem;
             text-align: justify;
         }
 
-        .book-info {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-            gap: 1.5rem;
-            margin: 2rem 0;
+        .details {
+            background-color: #111111;
             padding: 2rem;
-            background: #0a0a0a;
-            border-radius: 5px;
+            border-left: 4px solid #DAA520;
+            margin: 2rem 0;
         }
 
-        .book-info div strong {
+        .details-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 1.5rem;
+        }
+
+        .detail-item {
+            padding: 1rem;
+        }
+
+        .detail-item strong {
             color: #DAA520;
             display: block;
             margin-bottom: 0.5rem;
+            font-size: 1.1rem;
         }
 
-        .themes {
+        .themes-list {
             list-style: none;
-            padding: 0;
+            padding-left: 0;
         }
 
-        .themes li {
-            padding: 0.8rem;
-            margin: 0.5rem 0;
-            background: #0a0a0a;
-            border-left: 3px solid #DAA520;
-            border-radius: 3px;
+        .themes-list li {
+            padding: 0.8rem 0 0.8rem 2rem;
+            position: relative;
+            font-size: 1.1rem;
+        }
+
+        .themes-list li:before {
+            content: "▸";
+            color: #DAA520;
+            position: absolute;
+            left: 0;
+            font-size: 1.5rem;
+        }
+
+        blockquote {
+            border-left: 4px solid #DAA520;
+            padding: 2rem;
+            margin: 2rem 0;
+            background-color: #111111;
+            font-style: italic;
+            font-size: 1.2rem;
+            color: #DAA520;
+        }
+
+        .cta {
+            text-align: center;
+            padding: 4rem 0;
+            background-color: #111111;
+        }
+
+        .cta h2 {
+            margin-bottom: 2rem;
         }
 
         .btn {
             display: inline-block;
-            background: #DAA520;
-            color: #000;
+            background-color: #DAA520;
+            color: #000000;
             padding: 1rem 2.5rem;
             text-decoration: none;
-            border-radius: 5px;
-            font-weight: bold;
             font-size: 1.2rem;
-            transition: all 0.3s;
-            margin-top: 1rem;
-            margin-right: 1rem;
+            font-weight: bold;
+            border-radius: 5px;
+            transition: all 0.3s ease;
+            margin: 0.5rem;
         }
 
         .btn:hover {
-            background: #c99400;
-            transform: scale(1.05);
+            background-color: #FFFFFF;
+            color: #000000;
+            transform: translateY(-2px);
+            box-shadow: 0 5px 15px rgba(218, 165, 32, 0.4);
         }
 
-        .quote {
-            background: #0a0a0a;
-            padding: 2rem;
-            border-left: 4px solid #DAA520;
-            font-style: italic;
-            font-size: 1.2rem;
+        .btn-secondary {
+            background-color: transparent;
+            border: 2px solid #DAA520;
+            color: #DAA520;
+        }
+
+        .btn-secondary:hover {
+            background-color: #DAA520;
+            color: #000000;
+        }
+
+        .btn-disabled {
+            background-color: #555555;
+            color: #999999;
+            cursor: not-allowed;
+            pointer-events: none;
+        }
+
+        .note {
+            background-color: #1a1a1a;
+            border: 1px solid #DAA520;
+            padding: 1.5rem;
             margin: 2rem 0;
             border-radius: 5px;
         }
 
+        .note strong {
+            color: #DAA520;
+        }
+
         footer {
-            background: #0a0a0a;
-            padding: 2rem;
-            text-align: center;
+            background-color: #000000;
             border-top: 2px solid #DAA520;
+            padding: 2rem 0;
+            text-align: center;
+            margin-top: 4rem;
         }
 
         footer p {
-            color: #888;
+            color: #FFFFFF;
+            margin-bottom: 1rem;
         }
 
-        footer a {
+        footer nav {
+            margin-top: 1rem;
+        }
+
+        footer nav a {
             color: #DAA520;
+            margin: 0 1rem;
             text-decoration: none;
         }
 
-        footer a:hover {
-            text-decoration: underline;
+        footer nav a:hover {
+            color: #FFFFFF;
         }
 
         @media (max-width: 768px) {
             h1 {
-                font-size: 2.5rem;
+                font-size: 1.8rem;
             }
 
-            .subtitle {
+            .hero h2 {
+                font-size: 1.6rem;
+            }
+
+            .hero h3 {
                 font-size: 1.2rem;
             }
 
@@ -198,113 +287,141 @@
                 gap: 1rem;
             }
 
-            .book-info {
+            .details-grid {
                 grid-template-columns: 1fr;
+            }
+
+            .book-cover img {
+                max-width: 300px;
+            }
+
+            .btn {
+                display: block;
+                margin: 1rem auto;
             }
         }
     </style>
 </head>
 <body>
-    <nav>
-        <ul>
-            <li><a href="index.html">Início</a></li>
-            <li><a href="catalogo.html">Catálogo</a></li>
-            <li><a href="tua-vontade.html">Tua Vontade</a></li>
-            <li><a href="ta-volonte.html">Ta Volonté</a></li>
-            <li><a href="contato.html">Contato</a></li>
-        </ul>
-    </nav>
+    <header>
+        <div class="container">
+            <h1>MANIA LIBRIS</h1>
+            <nav>
+                <ul>
+                    <li><a href="index.html">Accueil</a></li>
+                    <li><a href="catalogo.html">Catalogue</a></li>
+                    <li><a href="contato.html">Contact</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
 
-    <div class="hero">
-        <h1>Ta Volonté</h1>
-        <p class="subtitle">Intelligence Artificielle, Pouvoir Divin et l'Âme Humaine</p>
-        <p style="color: #DAA520; font-size: 1.2rem;">par Stéphane Cassani</p>
-    </div>
+    <main class="container">
+        <section class="hero">
+            <h2>TA VOLONTÉ</h2>
+            <h3>Dialogues sur l'IA, le Pouvoir et l'Âme Humaine</h3>
+            <p class="author">Stéphane Jean Cassani</p>
+        </section>
 
-    <div class="container">
-        <div class="section">
+        <div class="book-cover">
+            <img src="images/ta-volonte-cover.png" alt="Couverture du livre TA VOLONTÉ">
+        </div>
+
+        <section>
             <h2>À Propos du Livre</h2>
             <p>
-                "Ta Volonté" est une exploration révolutionnaire qui examine l'intersection entre l'intelligence artificielle, 
-                le pouvoir divin et l'essence de l'âme humaine. Cet ouvrage novateur est né de trois mois de dialogue intense 
-                entre humain et IA, aboutissant à une réflexion profonde sur les questions les plus fondamentales de notre époque.
+                Face à l'émergence de l'intelligence artificielle, quelle place reste-t-il pour l'âme humaine ? Quand les machines semblent surpasser nos capacités, que devient notre dignité ? Et si la Bible détenait des réponses que la technologie ne peut offrir ?
             </p>
             <p>
-                Le livre étudie la convergence NBIC (Nanotechnologie, Biotechnologie, Informatique et Sciences Cognitives) 
-                à travers un prisme théologique unique, questionnant les frontières entre création humaine et divine. Il présente 
-                une perspective novatrice sur l'annihilationnisme biblique et ses implications pour notre compréhension de la 
-                technologie moderne.
+                Dans un monde où l'intelligence artificielle redéfinit les frontières de la création, du pouvoir et de la conscience, nous sommes confrontés à des questions existentielles profondes. Les algorithmes qui façonnent nos vies peuvent-ils aussi influencer nos âmes ? La technologie est-elle une bénédiction divine ou un défi à notre humanité ? Comment la foi chrétienne peut-elle nous guider dans cette ère de transformation digitale ?
             </p>
+            <p>
+                "TA VOLONTÉ" offre une exploration théologique audacieuse de ces enjeux cruciaux. À travers une série de dialogues profonds, cet ouvrage examine la convergence entre foi, technologie et eschatologie, proposant une vision chrétienne de l'avenir de l'humanité. Stéphane Jean Cassani nous invite à réfléchir sur le destін éternel de l'âme, l'annihilationnisme biblique, et la place de Dieu dans un univers de plus en plus dominé par les machines.
+            </p>
+            <p>
+                Ce livre s'adresse à tous ceux qui cherchent à comprendre comment la foi chrétienne peut éclairer les défis technologiques de notre époque. Que vous soyez passionné de théologie, inquiet des implications de l'IA, ou simplement en quête de sens dans un monde en mutation, vous trouverez ici des perspectives bibliques novatrices et des réflexions profondes sur l'avenir de l'âme humaine à l'ère du numérique.
+            </p>
+        </section>
 
-            <div class="book-info">
-                <div>
-                    <strong>Langue</strong>
-                    <p>Français</p>
+        <section class="details">
+            <h2>Détails du Livre</h2>
+            <div class="details-grid">
+                <div class="detail-item">
+                    <strong>Auteur:</strong>
+                    Stéphane Jean Cassani
                 </div>
-                <div>
-                    <strong>Auteur</strong>
-                    <p>Stéphane Cassani</p>
+                <div class="detail-item">
+                    <strong>Langue:</strong>
+                    Français
                 </div>
-                <div>
-                    <strong>Genre</strong>
-                    <p>Théologie, Technologie, Philosophie</p>
+                <div class="detail-item">
+                    <strong>Genre:</strong>
+                    Théologie / Eschatologie
                 </div>
-                <div>
-                    <strong>Pages</strong>
-                    <p>Env. 300</p>
+                <div class="detail-item">
+                    <strong>Pages:</strong>
+                    400+ pages
+                </div>
+                <div class="detail-item">
+                    <strong>Format:</strong>
+                    Ebook Kindle
+                </div>
+                <div class="detail-item">
+                    <strong>Prix:</strong>
+                    5,99 €
                 </div>
             </div>
-        </div>
+        </section>
 
-        <div class="section">
+        <section>
             <h2>Thèmes Principaux</h2>
-            <ul class="themes">
-                <li><strong>Intelligence Artificielle et Théologie Chrétienne</strong> - Une analyse approfondie du rôle de l'IA dans la compréhension théologique moderne</li>
-                <li><strong>Convergence NBIC et Pouvoir Divin</strong> - Comment les technologies convergentes reflètent et questionnent les concepts de création divine</li>
-                <li><strong>Annihilationnisme Biblique</strong> - Une perspective renouvelée sur la mortalité conditionnelle et ses implications</li>
-                <li><strong>L'Âme Humaine à l'Ère Numérique</strong> - Ce que signifie être humain dans un monde d'intelligences artificielles</li>
-                <li><strong>Éthique Technologique et Foi</strong> - Naviguer les dilemmes moraux à l'intersection de la technologie et de la spiritualité</li>
+            <ul class="themes-list">
+                <li>Intelligence Artificielle et Théologie Chrétienne : Une perspective biblique sur les machines pensantes</li>
+                <li>Annihilationnisme Biblique : Le débat eschatologique sur le destin éternel de l'âme</li>
+                <li>Dignité Humaine à l'Ère Numérique : Ce qui nous rend uniques face aux machines</li>
+                <li>Convergence entre Foi et Technologie : Dieu dans le monde des algorithmes</li>
+                <li>Eschatologie Contemporaine : L'avenir de l'humanité à la lumière des Écritures</li>
+                <li>Pouvoir, Éthique et Responsabilité : Qui contrôle la technologie et pourquoi ?</li>
             </ul>
-        </div>
+        </section>
 
-        <div class="quote">
-            "Ce livre est le résultat d'un voyage intellectuel et spirituel unique - trois mois de dialogue 
-            entre humain et intelligence artificielle, explorant les questions les plus profondes sur la création, 
-            le pouvoir et le dessein divin à notre ère technologique."
-        </div>
+        <section>
+            <blockquote>
+                "Entre le silicium et l'âme, entre le code et la conscience, il existe un espace sacré où Dieu parle encore. Ce livre est une invitation à explorer ce territoire où foi et futur se rencontrent."
+            </blockquote>
+        </section>
 
-        <div class="section">
-            <h2>Pour Qui est Ce Livre ?</h2>
+        <section>
+            <h2>Pour Qui ?</h2>
             <p>
-                "Ta Volonté" est essentiel pour :
+                <strong>TA VOLONTÉ</strong> est essentiel pour les chrétiens désireux d'approfondir leur compréhension théologique face aux défis de l'intelligence artificielle. Si vous êtes pasteur, responsable d'église, étudiant en théologie ou simplement un croyant préoccupé par les questions existentielles de notre temps, ce livre offre des fondements bibliques solides pour naviguer à l'intersection de la foi et de la technologie.
             </p>
-            <ul class="themes">
-                <li>Les théologiens et étudiants en religion intéressés par la technologie</li>
-                <li>Les professionnels de la technologie cherchant des perspectives éthiques et spirituelles</li>
-                <li>Les philosophes explorant les questions de conscience et de création</li>
-                <li>Les chrétiens questionnant le rôle de la foi dans un monde technologique</li>
-                <li>Toute personne intéressée par l'avenir de l'humanité et de la technologie</li>
-            </ul>
-        </div>
+            <p>
+                Il s'adresse également aux professionnels de la technologie, chercheurs en IA et innovateurs qui recherchent une perspective spirituelle sur leur travail. Pour ceux qui s'intéressent à l'eschatologie, à l'annihilationnisme et aux grandes questions sur le destin de l'âme humaine, cet ouvrage présente des analyses rigoureuses et des réflexions provocantes enracinées dans les Écritures.
+            </p>
+            <p>
+                Enfin, pour toute personne se demandant quelle place occupe Dieu dans un monde de plus en plus dominé par les machines, "TA VOLONTÉ" offre espoir, clarté et une vision théologique qui honore à la fois la sagesse biblique et les réalités du XXIe siècle.
+            </p>
+        </section>
 
-        <div class="section" style="text-align: center;">
-            <h2>Procurez-vous Votre Exemplaire</h2>
-            <p style="margin-bottom: 2rem;">Disponible en format numérique et imprimé</p>
-            <a href="#" class="btn">Acheter sur Amazon</a>
-            <a href="catalogo.html" class="btn" style="background: #666;">Voir Autres Livres</a>
-        </div>
-    </div>
+        <section class="cta">
+            <h2>Obtenez Votre Exemplaire</h2>
+            <div class="note">
+                <strong>Disponible prochainement !</strong> Ce livre a été récemment soumis à Amazon et sera disponible à l'achat dans les 24-72 heures. Le lien d'achat sera ajouté ici dès que le livre sera publié.
+            </div>
+            <a href="#" class="btn btn-disabled">Bientôt sur Amazon</a>
+            <a href="catalogo.html" class="btn btn-secondary">Retour au Catalogue</a>
+        </section>
+    </main>
 
     <footer>
-        <p>&copy; 2025 Mania Libris - Tous droits réservés</p>
-        <p>
-            <a href="politica-privacidade.html">Politique de Confidentialité</a> | 
-            <a href="aviso-legal.html">Mentions Légales</a> | 
-            <a href="contato.html">Contact</a>
-        </p>
-        <p style="margin-top: 1rem;">
-            Email: <a href="mailto:info@manialibris.com">info@manialibris.com</a>
-        </p>
+        <div class="container">
+            <p>&copy; 2025 Mania Libris. Tous droits réservés.</p>
+            <nav>
+                <a href="politica-privacidade.html">Politique de Confidentialité</a>
+                <a href="aviso-legal.html">Mentions Légales</a>
+            </nav>
+        </div>
     </footer>
 </body>
 </html>

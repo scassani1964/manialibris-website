@@ -1,10 +1,12 @@
-﻿<!DOCTYPE html>
-<html lang="pt-BR">
+<!DOCTYPE html>
+<html lang="pt">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="Tua Vontade - Livro sobre IA, poder divino e convergência NBIC por Stéphane Cassani">
-    <title>Tua Vontade - Mania Libris</title>
+    <meta name="description" content="TUA VONTADE explora a convergência entre fé cristã, inteligência artificial e escatologia. Uma jornada teológica profunda sobre o poder, a alma humana e o aniquilacionismo bíblico.">
+    <meta name="keywords" content="teologia cristã, escatologia, aniquilacionismo, inteligência artificial, fé e tecnologia, Stéphane Jean Cassani, Mania Libris">
+    <meta name="author" content="Stéphane Jean Cassani">
+    <title>TUA VONTADE - Diálogos sobre IA, Poder e a Alma Humana | Mania Libris</title>
     <style>
         * {
             margin: 0;
@@ -13,183 +15,270 @@
         }
 
         body {
-            font-family: 'Georgia', serif;
-            background-color: #000;
-            color: #f8f8f8;
+            font-family: Georgia, "Times New Roman", Times, serif;
+            background-color: #000000;
+            color: #FFFFFF;
             line-height: 1.6;
         }
 
-        nav {
-            background: rgba(0, 0, 0, 0.95);
-            padding: 1.5rem 2rem;
-            position: sticky;
-            top: 0;
-            z-index: 1000;
+        header {
+            background-color: #000000;
+            padding: 2rem 0;
             border-bottom: 2px solid #DAA520;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 2rem;
+        }
+
+        h1 {
+            font-size: 2.5rem;
+            color: #DAA520;
+            text-align: center;
+            margin-bottom: 1rem;
+        }
+
+        nav {
+            text-align: center;
+            margin-top: 1.5rem;
         }
 
         nav ul {
             list-style: none;
             display: flex;
             justify-content: center;
-            flex-wrap: wrap;
             gap: 2rem;
         }
 
         nav a {
             color: #DAA520;
             text-decoration: none;
-            font-weight: bold;
             font-size: 1.1rem;
-            transition: all 0.3s;
-            padding: 0.5rem 1rem;
-            border-radius: 5px;
+            transition: color 0.3s ease;
         }
 
         nav a:hover {
-            background: #DAA520;
-            color: #000;
+            color: #FFFFFF;
         }
 
         .hero {
             text-align: center;
-            padding: 4rem 2rem;
-            background: linear-gradient(135deg, #1a1a1a 0%, #000 100%);
-            border-bottom: 3px solid #DAA520;
+            padding: 4rem 0;
+            border-bottom: 1px solid #DAA520;
         }
 
-        h1 {
+        .hero h2 {
+            font-size: 2.2rem;
             color: #DAA520;
-            font-size: 3.5rem;
             margin-bottom: 1rem;
-            text-shadow: 2px 2px 4px rgba(218, 165, 32, 0.3);
         }
 
-        .subtitle {
+        .hero h3 {
             font-size: 1.5rem;
-            color: #ccc;
+            color: #FFFFFF;
+            font-weight: normal;
+            margin-bottom: 1.5rem;
             font-style: italic;
+        }
+
+        .hero .author {
+            font-size: 1.3rem;
+            color: #DAA520;
             margin-bottom: 2rem;
         }
 
-        .container {
-            max-width: 1000px;
-            margin: 0 auto;
-            padding: 3rem 2rem;
+        .book-cover {
+            text-align: center;
+            margin: 3rem 0;
         }
 
-        .section {
-            background: #1a1a1a;
-            border-radius: 10px;
-            padding: 3rem;
-            margin-bottom: 3rem;
-            border-left: 5px solid #DAA520;
+        .book-cover img {
+            max-width: 400px;
+            width: 100%;
+            height: auto;
+            border: 3px solid #DAA520;
+            box-shadow: 0 10px 30px rgba(218, 165, 32, 0.3);
+        }
+
+        section {
+            padding: 3rem 0;
+            border-bottom: 1px solid #DAA520;
+        }
+
+        section:last-of-type {
+            border-bottom: none;
         }
 
         h2 {
+            font-size: 2rem;
             color: #DAA520;
-            font-size: 2.5rem;
             margin-bottom: 1.5rem;
         }
 
         h3 {
+            font-size: 1.5rem;
             color: #DAA520;
-            font-size: 1.8rem;
-            margin-top: 2rem;
             margin-bottom: 1rem;
         }
 
         p {
+            margin-bottom: 1.5rem;
             font-size: 1.1rem;
-            line-height: 1.8;
-            margin-bottom: 1rem;
             text-align: justify;
         }
 
-        .book-info {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-            gap: 1.5rem;
-            margin: 2rem 0;
+        .details {
+            background-color: #111111;
             padding: 2rem;
-            background: #0a0a0a;
-            border-radius: 5px;
+            border-left: 4px solid #DAA520;
+            margin: 2rem 0;
         }
 
-        .book-info div strong {
+        .details-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 1.5rem;
+        }
+
+        .detail-item {
+            padding: 1rem;
+        }
+
+        .detail-item strong {
             color: #DAA520;
             display: block;
             margin-bottom: 0.5rem;
+            font-size: 1.1rem;
         }
 
-        .themes {
+        .themes-list {
             list-style: none;
-            padding: 0;
+            padding-left: 0;
         }
 
-        .themes li {
-            padding: 0.8rem;
-            margin: 0.5rem 0;
-            background: #0a0a0a;
-            border-left: 3px solid #DAA520;
-            border-radius: 3px;
+        .themes-list li {
+            padding: 0.8rem 0 0.8rem 2rem;
+            position: relative;
+            font-size: 1.1rem;
+        }
+
+        .themes-list li:before {
+            content: "▸";
+            color: #DAA520;
+            position: absolute;
+            left: 0;
+            font-size: 1.5rem;
+        }
+
+        blockquote {
+            border-left: 4px solid #DAA520;
+            padding: 2rem;
+            margin: 2rem 0;
+            background-color: #111111;
+            font-style: italic;
+            font-size: 1.2rem;
+            color: #DAA520;
+        }
+
+        .cta {
+            text-align: center;
+            padding: 4rem 0;
+            background-color: #111111;
+        }
+
+        .cta h2 {
+            margin-bottom: 2rem;
         }
 
         .btn {
             display: inline-block;
-            background: #DAA520;
-            color: #000;
+            background-color: #DAA520;
+            color: #000000;
             padding: 1rem 2.5rem;
             text-decoration: none;
-            border-radius: 5px;
-            font-weight: bold;
             font-size: 1.2rem;
-            transition: all 0.3s;
-            margin-top: 1rem;
-            margin-right: 1rem;
+            font-weight: bold;
+            border-radius: 5px;
+            transition: all 0.3s ease;
+            margin: 0.5rem;
         }
 
         .btn:hover {
-            background: #c99400;
-            transform: scale(1.05);
+            background-color: #FFFFFF;
+            color: #000000;
+            transform: translateY(-2px);
+            box-shadow: 0 5px 15px rgba(218, 165, 32, 0.4);
         }
 
-        .quote {
-            background: #0a0a0a;
-            padding: 2rem;
-            border-left: 4px solid #DAA520;
-            font-style: italic;
-            font-size: 1.2rem;
+        .btn-secondary {
+            background-color: transparent;
+            border: 2px solid #DAA520;
+            color: #DAA520;
+        }
+
+        .btn-secondary:hover {
+            background-color: #DAA520;
+            color: #000000;
+        }
+
+        .btn-disabled {
+            background-color: #555555;
+            color: #999999;
+            cursor: not-allowed;
+            pointer-events: none;
+        }
+
+        .note {
+            background-color: #1a1a1a;
+            border: 1px solid #DAA520;
+            padding: 1.5rem;
             margin: 2rem 0;
             border-radius: 5px;
         }
 
+        .note strong {
+            color: #DAA520;
+        }
+
         footer {
-            background: #0a0a0a;
-            padding: 2rem;
-            text-align: center;
+            background-color: #000000;
             border-top: 2px solid #DAA520;
+            padding: 2rem 0;
+            text-align: center;
+            margin-top: 4rem;
         }
 
         footer p {
-            color: #888;
+            color: #FFFFFF;
+            margin-bottom: 1rem;
         }
 
-        footer a {
+        footer nav {
+            margin-top: 1rem;
+        }
+
+        footer nav a {
             color: #DAA520;
+            margin: 0 1rem;
             text-decoration: none;
         }
 
-        footer a:hover {
-            text-decoration: underline;
+        footer nav a:hover {
+            color: #FFFFFF;
         }
 
         @media (max-width: 768px) {
             h1 {
-                font-size: 2.5rem;
+                font-size: 1.8rem;
             }
 
-            .subtitle {
+            .hero h2 {
+                font-size: 1.6rem;
+            }
+
+            .hero h3 {
                 font-size: 1.2rem;
             }
 
@@ -198,113 +287,141 @@
                 gap: 1rem;
             }
 
-            .book-info {
+            .details-grid {
                 grid-template-columns: 1fr;
+            }
+
+            .book-cover img {
+                max-width: 300px;
+            }
+
+            .btn {
+                display: block;
+                margin: 1rem auto;
             }
         }
     </style>
 </head>
 <body>
-    <nav>
-        <ul>
-            <li><a href="index.html">Início</a></li>
-            <li><a href="catalogo.html">Catálogo</a></li>
-            <li><a href="tua-vontade.html">Tua Vontade</a></li>
-            <li><a href="ta-volonte.html">Ta Volonté</a></li>
-            <li><a href="contato.html">Contato</a></li>
-        </ul>
-    </nav>
+    <header>
+        <div class="container">
+            <h1>MANIA LIBRIS</h1>
+            <nav>
+                <ul>
+                    <li><a href="index.html">Início</a></li>
+                    <li><a href="catalogo.html">Catálogo</a></li>
+                    <li><a href="contato.html">Contato</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
 
-    <div class="hero">
-        <h1>Tua Vontade</h1>
-        <p class="subtitle">Inteligência Artificial, Poder Divino e a Alma Humana</p>
-        <p style="color: #DAA520; font-size: 1.2rem;">por Stéphane Cassani</p>
-    </div>
+    <main class="container">
+        <section class="hero">
+            <h2>TUA VONTADE</h2>
+            <h3>Diálogos sobre IA, Poder e a Alma Humana</h3>
+            <p class="author">Stéphane Jean Cassani</p>
+        </section>
 
-    <div class="container">
-        <div class="section">
+        <div class="book-cover">
+            <img src="images/tua-vontade-cover.png" alt="Capa do livro TUA VONTADE">
+        </div>
+
+        <section>
             <h2>Sobre o Livro</h2>
             <p>
-                "Tua Vontade" é uma exploração revolucionária que examina a interseção entre inteligência artificial, 
-                poder divino e a essência da alma humana. Este trabalho inovador nasceu de três meses de diálogo intenso 
-                entre humano e IA, resultando em uma reflexão profunda sobre as questões mais fundamentais de nossa época.
+                Diante da emergência da inteligência artificial, qual o lugar que resta para a alma humana? Quando as máquinas parecem superar nossas capacidades, o que acontece com nossa dignidade? E se a Bíblia detivesse respostas que a tecnologia não pode oferecer?
             </p>
             <p>
-                O livro investiga a convergência NBIC (Nanotecnologia, Biotecnologia, Informática e Ciências Cognitivas) 
-                através de uma lente teológica única, questionando as fronteiras entre criação humana e divina. Apresenta 
-                uma perspectiva inovadora sobre o aniquilacionismo bíblico e suas implicações para nossa compreensão da 
-                tecnologia moderna.
+                Em um mundo onde a inteligência artificial redefine as fronteiras da criação, do poder e da consciência, enfrentamos questões existenciais profundas. Os algoritmos que moldam nossas vidas podem também influenciar nossas almas? A tecnologia é uma bênção divina ou um desafio à nossa humanidade? Como a fé cristã pode nos guiar nesta era de transformação digital?
             </p>
+            <p>
+                "TUA VONTADE" oferece uma exploração teológica audaciosa destes temas cruciais. Através de uma série de diálogos profundos, esta obra examina a convergência entre fé, tecnologia e escatologia, propondo uma visão cristã do futuro da humanidade. Stéphane Jean Cassani nos convida a refletir sobre o destino eterno da alma, o aniquilacionismo bíblico, e o lugar de Deus em um universo cada vez mais dominado pelas máquinas.
+            </p>
+            <p>
+                Este livro se dirige a todos aqueles que buscam compreender como a fé cristã pode iluminar os desafios tecnológicos de nossa época. Seja você apaixonado por teologia, preocupado com as implicações da IA, ou simplesmente em busca de sentido num mundo em mutação, encontrará aqui perspectivas bíblicas inovadoras e reflexões profundas sobre o futuro da alma humana na era digital.
+            </p>
+        </section>
 
-            <div class="book-info">
-                <div>
-                    <strong>Idioma</strong>
-                    <p>Português</p>
+        <section class="details">
+            <h2>Detalhes do Livro</h2>
+            <div class="details-grid">
+                <div class="detail-item">
+                    <strong>Autor:</strong>
+                    Stéphane Jean Cassani
                 </div>
-                <div>
-                    <strong>Autor</strong>
-                    <p>Stéphane Cassani</p>
+                <div class="detail-item">
+                    <strong>Idioma:</strong>
+                    Português (Brasil)
                 </div>
-                <div>
-                    <strong>Gênero</strong>
-                    <p>Teologia, Tecnologia, Filosofia</p>
+                <div class="detail-item">
+                    <strong>Gênero:</strong>
+                    Teologia / Escatologia
                 </div>
-                <div>
-                    <strong>Páginas</strong>
-                    <p>Aprox. 300</p>
+                <div class="detail-item">
+                    <strong>Páginas:</strong>
+                    400+ páginas
+                </div>
+                <div class="detail-item">
+                    <strong>Formato:</strong>
+                    Ebook Kindle
+                </div>
+                <div class="detail-item">
+                    <strong>Preço:</strong>
+                    R$ 19,90
                 </div>
             </div>
-        </div>
+        </section>
 
-        <div class="section">
+        <section>
             <h2>Temas Principais</h2>
-            <ul class="themes">
-                <li><strong>Inteligência Artificial e Teologia Cristã</strong> - Uma análise profunda sobre o papel da IA na compreensão teológica moderna</li>
-                <li><strong>Convergência NBIC e Poder Divino</strong> - Como as tecnologias convergentes refletem e questionam conceitos de criação divina</li>
-                <li><strong>Aniquilacionismo Bíblico</strong> - Uma perspectiva renovada sobre a mortalidade condicional e suas implicações</li>
-                <li><strong>A Alma Humana na Era Digital</strong> - O que significa ser humano em um mundo de inteligências artificiais</li>
-                <li><strong>Ética Tecnológica e Fé</strong> - Navegando dilemas morais na intersecção da tecnologia e espiritualidade</li>
+            <ul class="themes-list">
+                <li>Inteligência Artificial e Teologia Cristã: Uma perspectiva bíblica sobre as máquinas que pensam</li>
+                <li>Aniquilacionismo Bíblico: O debate escatológico sobre o destino eterno da alma</li>
+                <li>Dignidade Humana na Era Digital: O que nos torna únicos diante das máquinas?</li>
+                <li>Convergência entre Fé e Tecnologia: Deus no mundo dos algoritmos</li>
+                <li>Escatologia Contemporânea: O futuro da humanidade à luz das Escrituras</li>
+                <li>Poder, Ética e Responsabilidade: Quem controla a tecnologia e para quê?</li>
             </ul>
-        </div>
+        </section>
 
-        <div class="quote">
-            "Este livro é o resultado de uma jornada intelectual e espiritual única - três meses de diálogo 
-            entre humano e inteligência artificial, explorando as questões mais profundas sobre criação, 
-            poder e propósito divino em nossa era tecnológica."
-        </div>
+        <section>
+            <blockquote>
+                "Entre o silício e a alma, entre o código e a consciência, há um espaço sagrado onde Deus ainda fala. Este livro é um convite para explorar esse território onde fé e futuro se encontram."
+            </blockquote>
+        </section>
 
-        <div class="section">
+        <section>
             <h2>Para Quem é Este Livro?</h2>
             <p>
-                "Tua Vontade" é essencial para:
+                <strong>TUA VONTADE</strong> é essencial para cristãos que desejam aprofundar sua compreensão teológica diante dos desafios da inteligência artificial. Se você é pastor, líder de igreja, estudante de teologia ou simplesmente um crente inquieto com as questões existenciais de nosso tempo, este livro oferece fundamentos bíblicos sólidos para navegar na intersecção entre fé e tecnologia.
             </p>
-            <ul class="themes">
-                <li>Teólogos e estudiosos da religião interessados em tecnologia</li>
-                <li>Profissionais de tecnologia buscando perspectivas éticas e espirituais</li>
-                <li>Filósofos explorando questões de consciência e criação</li>
-                <li>Cristãos questionando o papel da fé em um mundo tecnológico</li>
-                <li>Qualquer pessoa interessada no futuro da humanidade e tecnologia</li>
-            </ul>
-        </div>
+            <p>
+                Também se destina a profissionais de tecnologia, pesquisadores de IA e inovadores que buscam uma perspectiva espiritual sobre seu trabalho. Para aqueles interessados em escatologia, aniquilacionismo e nas grandes questões sobre o destino da alma humana, esta obra apresenta análises rigorosas e reflexões provocativas enraizadas nas Escrituras.
+            </p>
+            <p>
+                Finalmente, para qualquer pessoa se perguntando sobre o lugar de Deus em um mundo cada vez mais dominado por máquinas, "TUA VONTADE" oferece esperança, clareza e uma visão teológica que honra tanto a sabedoria bíblica quanto as realidades do século XXI.
+            </p>
+        </section>
 
-        <div class="section" style="text-align: center;">
-            <h2>Adquira Seu Exemplar</h2>
-            <p style="margin-bottom: 2rem;">Disponível em formato digital e impresso</p>
-            <a href="#" class="btn">Comprar na Amazon</a>
-            <a href="catalogo.html" class="btn" style="background: #666;">Ver Outros Livros</a>
-        </div>
-    </div>
+        <section class="cta">
+            <h2>Obtenha Seu Exemplar</h2>
+            <div class="note">
+                <strong>Disponível em breve!</strong> Este livro foi recentemente submetido à Amazon e estará disponível para compra nas próximas 24-72 horas. O link de compra será adicionado aqui assim que o livro for publicado.
+            </div>
+            <a href="#" class="btn btn-disabled">Em breve na Amazon</a>
+            <a href="catalogo.html" class="btn btn-secondary">Voltar ao Catálogo</a>
+        </section>
+    </main>
 
     <footer>
-        <p>&copy; 2025 Mania Libris - Todos os direitos reservados</p>
-        <p>
-            <a href="politica-privacidade.html">Política de Privacidade</a> | 
-            <a href="aviso-legal.html">Aviso Legal</a> | 
-            <a href="contato.html">Contato</a>
-        </p>
-        <p style="margin-top: 1rem;">
-            Email: <a href="mailto:info@manialibris.com">info@manialibris.com</a>
-        </p>
+        <div class="container">
+            <p>&copy; 2025 Mania Libris. Todos os direitos reservados.</p>
+            <nav>
+                <a href="politica-privacidade.html">Política de Privacidade</a>
+                <a href="aviso-legal.html">Aviso Legal</a>
+            </nav>
+        </div>
     </footer>
 </body>
 </html>
