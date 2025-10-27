@@ -3,9 +3,9 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="Ressources bibliques gratuites de Mania Libris - applications web interactives pour l'étude de la Parole de Dieu">
-    <meta name="keywords" content="ressources bibliques, promesses de Dieu, étude biblique, outils chrétiens, applications bibliques">
-    <title>Ressources Bibliques | Mania Libris</title>
+    <meta name="description" content="Ressources bibliques gratuites de Mania Libris - applications interactives avec promesses de Dieu, études théologiques et outils pour approfondir votre foi.">
+    <meta name="keywords" content="ressources bibliques, promesses de Dieu, applications bibliques, étude biblique, théologie, Mania Libris">
+    <title>Ressources | Mania Libris</title>
     <style>
         * {
             margin: 0;
@@ -14,299 +14,355 @@
         }
 
         body {
-            font-family: Georgia, "Times New Roman", Times, serif;
-            background-color: #000000;
-            color: #FFFFFF;
+            font-family: Georgia, 'Times New Roman', serif;
+            background: #000;
+            color: #fff;
             line-height: 1.6;
-            padding: 20px;
         }
 
-        header {
-            text-align: center;
-            padding: 40px 0;
-            border-bottom: 2px solid #DAA520;
-            margin-bottom: 40px;
-        }
-
-        header h1 {
-            color: #DAA520;
-            font-size: 2.5em;
-            margin-bottom: 10px;
-        }
-
-        header p {
-            font-size: 1.2em;
-            color: #FFFFFF;
-        }
-
+        /* Navigation */
         nav {
-            text-align: center;
-            margin: 30px 0;
+            position: sticky;
+            top: 0;
+            background: rgba(0, 0, 0, 0.95);
+            backdrop-filter: blur(10px);
+            padding: 20px 0;
+            border-bottom: 2px solid #DAA520;
+            z-index: 1000;
         }
 
-        nav ul {
+        .nav-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 40px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .logo {
+            display: flex;
+            align-items: center;
+            text-decoration: none;
+        }
+
+        .logo svg {
+            margin-right: 15px;
+        }
+
+        .logo-text {
+            color: #DAA520;
+            font-size: 1.5em;
+            font-weight: normal;
+        }
+
+        .nav-links {
+            display: flex;
+            gap: 40px;
             list-style: none;
-            padding: 0;
         }
 
-        nav ul li {
-            display: inline;
-            margin: 0 20px;
-        }
-
-        nav ul li a {
+        .nav-links a {
             color: #DAA520;
             text-decoration: none;
             font-size: 1.1em;
-            transition: color 0.3s;
+            transition: opacity 0.3s ease;
         }
 
-        nav ul li a:hover {
-            color: #FFFFFF;
+        .nav-links a:hover {
+            opacity: 0.7;
         }
 
-        main {
+        /* Container Principal */
+        .container {
             max-width: 1200px;
             margin: 0 auto;
-            padding: 20px;
+            padding: 60px 40px;
         }
 
-        .intro {
+        /* Hero Section */
+        .hero {
             text-align: center;
-            margin: 40px 0;
-            padding: 30px;
-            border: 2px solid #DAA520;
-            border-radius: 5px;
+            margin-bottom: 80px;
         }
 
-        .intro h2 {
+        .hero h1 {
+            color: #DAA520;
+            font-size: 3em;
+            margin-bottom: 20px;
+        }
+
+        .hero p {
+            font-size: 1.3em;
+            color: #ccc;
+            max-width: 800px;
+            margin: 0 auto;
+        }
+
+        /* Section Titre */
+        .section-title {
+            color: #DAA520;
+            font-size: 2.5em;
+            margin: 80px 0 40px 0;
+            text-align: center;
+        }
+
+        /* Grid de Ressources */
+        .recursos-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
+            gap: 40px;
+            margin: 60px 0;
+        }
+
+        .resource-card {
+            background: rgba(218, 165, 32, 0.05);
+            border: 2px solid #DAA520;
+            border-radius: 10px;
+            padding: 40px;
+            transition: all 0.3s ease;
+        }
+
+        .resource-card:hover {
+            transform: translateY(-5px);
+            background: rgba(218, 165, 32, 0.1);
+        }
+
+        .resource-icon {
+            font-size: 3em;
+            margin-bottom: 20px;
+        }
+
+        .resource-card h3 {
             color: #DAA520;
             font-size: 2em;
             margin-bottom: 20px;
         }
 
-        .intro p {
+        .resource-card p {
             font-size: 1.1em;
             line-height: 1.8;
             margin-bottom: 15px;
         }
 
-        .resources-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-            gap: 30px;
-            margin: 50px 0;
-        }
-
-        .resource-card {
-            background-color: #1a1a1a;
-            border: 2px solid #DAA520;
-            border-radius: 5px;
-            padding: 30px;
-            transition: transform 0.3s, box-shadow 0.3s;
-        }
-
-        .resource-card:hover {
-            transform: translateY(-5px);
-            box-shadow: 0 5px 20px rgba(218, 165, 32, 0.3);
-        }
-
-        .resource-card h3 {
-            color: #DAA520;
-            font-size: 1.8em;
-            margin-bottom: 15px;
-        }
-
-        .resource-card .language {
-            color: #DAA520;
-            font-style: italic;
-            margin-bottom: 15px;
-        }
-
-        .resource-card p {
-            margin-bottom: 20px;
-            line-height: 1.8;
-        }
-
-        .resource-card ul {
+        .resource-features {
             list-style: none;
             margin: 20px 0;
         }
 
-        .resource-card ul li {
-            margin: 10px 0;
-            padding-left: 20px;
+        .resource-features li {
+            padding: 8px 0;
+            padding-left: 25px;
             position: relative;
         }
 
-        .resource-card ul li:before {
+        .resource-features li:before {
             content: "✓";
             color: #DAA520;
-            font-weight: bold;
             position: absolute;
             left: 0;
-        }
-
-        .btn {
-            display: inline-block;
-            background-color: #DAA520;
-            color: #000000;
-            padding: 15px 30px;
-            text-decoration: none;
-            border-radius: 5px;
             font-weight: bold;
-            transition: background-color 0.3s;
-            margin-top: 15px;
         }
 
-        .btn:hover {
-            background-color: #FFFFFF;
+        .cta-button {
+            display: inline-block;
+            background: #DAA520;
+            color: #000;
+            padding: 15px 40px;
+            border-radius: 5px;
+            text-decoration: none;
+            font-size: 1.1em;
+            font-weight: bold;
+            margin-top: 20px;
+            transition: all 0.3s ease;
         }
 
+        .cta-button:hover {
+            background: #c99a1f;
+            transform: scale(1.05);
+        }
+
+        /* Section En Construction */
         .coming-soon {
+            background: rgba(218, 165, 32, 0.05);
+            border: 2px dashed #DAA520;
+            border-radius: 10px;
+            padding: 60px 40px;
             text-align: center;
             margin: 60px 0;
-            padding: 40px;
-            background-color: #1a1a1a;
-            border: 2px dashed #DAA520;
-            border-radius: 5px;
         }
 
         .coming-soon h3 {
             color: #DAA520;
-            font-size: 1.8em;
+            font-size: 2em;
             margin-bottom: 20px;
         }
 
         .coming-soon p {
-            font-size: 1.1em;
-            line-height: 1.8;
+            font-size: 1.2em;
+            color: #ccc;
         }
 
+        /* Footer */
         footer {
-            text-align: center;
-            padding: 30px 0;
-            margin-top: 60px;
+            background: #000;
             border-top: 2px solid #DAA520;
+            padding: 40px 0;
+            margin-top: 100px;
         }
 
-        footer p {
-            margin-bottom: 15px;
+        .footer-content {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 40px;
+            text-align: center;
         }
 
-        footer nav a {
+        .footer-content p {
+            color: #DAA520;
+            margin: 10px 0;
+        }
+
+        .footer-links {
+            margin-top: 20px;
+        }
+
+        .footer-links a {
             color: #DAA520;
             text-decoration: none;
             margin: 0 15px;
-            transition: color 0.3s;
+            transition: opacity 0.3s ease;
         }
 
-        footer nav a:hover {
-            color: #FFFFFF;
+        .footer-links a:hover {
+            opacity: 0.7;
         }
 
+        /* Responsive */
         @media (max-width: 768px) {
-            header h1 {
+            .nav-container {
+                flex-direction: column;
+                gap: 20px;
+            }
+
+            .nav-links {
+                gap: 20px;
+            }
+
+            .hero h1 {
                 font-size: 2em;
             }
 
-            nav ul li {
-                display: block;
-                margin: 10px 0;
+            .recursos-grid {
+                grid-template-columns: 1fr;
             }
 
-            .resources-grid {
-                grid-template-columns: 1fr;
+            .section-title {
+                font-size: 2em;
             }
         }
     </style>
 </head>
 <body>
-    <header>
-        <h1>Mania Libris</h1>
-        <p>Ressources Bibliques</p>
-    </header>
-
+    <!-- Navigation -->
     <nav>
-        <ul>
-            <li><a href="index.html">Accueil</a></li>
-            <li><a href="catalogo.html">Catalogue</a></li>
-            <li><a href="ressources.html">Ressources</a></li>
-            <li><a href="contato.html">Contact</a></li>
-        </ul>
+        <div class="nav-container">
+            <a href="index.html" class="logo">
+                <svg width="60" height="60" viewBox="0 0 60 60">
+                    <circle cx="30" cy="30" r="28" fill="none" stroke="#DAA520" stroke-width="2"/>
+                    <text x="30" y="38" font-family="Georgia" font-size="24" fill="#DAA520" text-anchor="middle">ML</text>
+                </svg>
+                <span class="logo-text">MANIA LIBRIS</span>
+            </a>
+            <ul class="nav-links">
+                <li><a href="index.html">Accueil</a></li>
+                <li><a href="catalogo.html">Catalogue</a></li>
+                <li><a href="ressources.html">Ressources</a></li>
+                <li><a href="contato.html">Contact</a></li>
+            </ul>
+        </div>
     </nav>
 
-    <main>
-        <div class="intro">
-            <h2>Des Outils pour Votre Parcours Spirituel</h2>
-            <p>
-                Mania Libris offre plus que des livres. Nous créons des ressources numériques gratuites 
-                pour soutenir votre étude biblique et votre croissance spirituelle. Ces outils sont 
-                conçus pour être accessibles, pratiques et centrés sur la Parole de Dieu.
-            </p>
-            <p>
-                Toutes nos ressources sont gratuites et disponibles en ligne. 
-                Utilisez-les quand et où vous en avez besoin.
-            </p>
-        </div>
+    <!-- Container Principal -->
+    <div class="container">
+        <!-- Hero Section -->
+        <section class="hero">
+            <h1>📚 Ressources Bibliques</h1>
+            <p>Outils gratuits pour approfondir votre foi et votre connaissance des Écritures. Applications interactives, études théologiques et ressources pratiques pour votre parcours spirituel.</p>
+        </section>
 
-        <div class="resources-grid">
+        <!-- Section Titre -->
+        <h2 class="section-title">✝️ Applications Bibliques Interactives</h2>
+
+        <!-- Grid de Ressources -->
+        <div class="recursos-grid">
+            <!-- Promesses de Dieu (FR) -->
             <div class="resource-card">
+                <div class="resource-icon">✝️</div>
                 <h3>Promesses de Dieu</h3>
-                <p class="language">Langue : Français</p>
-                <p>
-                    Une collection complète de promesses bibliques organisées par catégories. 
-                    Quand vous avez besoin d'encouragement, de direction ou d'espérance, trouvez la promesse 
-                    de Dieu pour votre situation.
-                </p>
-                <ul>
-                    <li>130+ versets bibliques</li>
-                    <li>35 catégories organisées</li>
-                    <li>Interface intuitive et responsive</li>
-                    <li>Recherche rapide par thème</li>
-                    <li>100% gratuit</li>
+                <p>Découvrez les promesses de Dieu pour chaque situation de votre vie. Naviguez parmi 35 catégories thématiques avec plus de 130 versets bibliques organisés pour vous.</p>
+                
+                <ul class="resource-features">
+                    <li>35 catégories organisées en 7 sections</li>
+                    <li>Plus de 130 versets en français</li>
+                    <li>Interface responsive (PC, tablette, mobile)</li>
+                    <li>Mode de lecture plein écran</li>
+                    <li>Navigation intuitive par accordéon</li>
+                    <li>Gratuit et sans publicité</li>
                 </ul>
-                <a href="https://scassani1964.github.io/promesses-bibliques/" class="btn" target="_blank">Accéder à l'Application →</a>
+
+                <a href="https://scassani1964.github.io/promesses-bibliques/" target="_blank" class="cta-button">Accéder à l'Application →</a>
             </div>
 
+            <!-- Promessas de Deus (PT) -->
             <div class="resource-card">
+                <div class="resource-icon">✝️</div>
                 <h3>Promessas de Deus</h3>
-                <p class="language">Langue : Portugais</p>
-                <p>
-                    La même collection complète de promesses bibliques, maintenant disponible en portugais. 
-                    Trouvez l'encouragement et l'espérance dans la Parole de Dieu, organisée par thèmes 
-                    pour faciliter votre recherche.
-                </p>
-                <ul>
-                    <li>130+ versets bibliques</li>
-                    <li>35 catégories organisées</li>
-                    <li>Interface intuitive et responsive</li>
-                    <li>Recherche rapide par thème</li>
-                    <li>100% gratuit</li>
+                <p>Version portugaise de l'application biblique. Descobra as promessas de Deus para cada situação da sua vida, organizadas em 35 categorias temáticas.</p>
+                
+                <ul class="resource-features">
+                    <li>35 categorias em 7 seções</li>
+                    <li>Mais de 130 versículos em português</li>
+                    <li>Interface responsiva (PC, tablet, mobile)</li>
+                    <li>Modo de leitura plein écran</li>
+                    <li>Navegação intuitiva por acordeão</li>
+                    <li>Gratuito e sem publicidade</li>
                 </ul>
-                <a href="https://scassani1964.github.io/promessas-biblicas/" class="btn" target="_blank">Acessar Aplicação →</a>
+
+                <a href="https://scassani1964.github.io/promessas-biblicas/" target="_blank" class="cta-button">Acessar Aplicativo →</a>
             </div>
         </div>
+
+        <!-- Section Bientôt -->
+        <h2 class="section-title">🚀 Bientôt Disponible</h2>
 
         <div class="coming-soon">
-            <h3>Plus de Ressources Bientôt</h3>
-            <p>
-                Nous développons continuellement de nouvelles ressources pour soutenir votre marche chrétienne. 
-                Des outils d'étude biblique, des guides dévotionnels interactifs et bien plus encore sont en préparation.
-            </p>
-            <p>
-                Abonnez-vous à notre newsletter ou suivez-nous sur les réseaux sociaux pour être notifié 
-                lorsque de nouvelles ressources seront lancées.
-            </p>
+            <h3>📖 Nouvelles Ressources en Développement</h3>
+            <p>Nous travaillons sur de nouvelles applications bibliques, des études théologiques interactives et des ressources éducatives. Revenez bientôt pour découvrir plus d'outils pour fortifier votre foi !</p>
         </div>
-    </main>
 
+        <!-- Section À Propos -->
+        <section style="margin-top: 80px; text-align: center;">
+            <h2 class="section-title">💡 À Propos de Nos Ressources</h2>
+            <p style="font-size: 1.2em; line-height: 1.8; max-width: 800px; margin: 30px auto;">
+                Chez Mania Libris, nous croyons que la technologie peut être un outil puissant pour partager la Parole de Dieu. Toutes nos ressources sont créées avec soin, basées sur les Écritures, et offertes gratuitement pour édifier l'église et fortifier la foi des croyants.
+            </p>
+            <p style="font-size: 1.1em; color: #DAA520; margin-top: 30px; font-style: italic;">
+                "Ta parole est une lampe à mes pieds, et une lumière sur mon sentier." - Psaumes 119:105
+            </p>
+        </section>
+    </div>
+
+    <!-- Footer -->
     <footer>
-        <p>&copy; 2025 Mania Libris. Tous droits réservés.</p>
-        <nav>
-            <a href="politica-privacidade.html">Politique de Confidentialité</a>
-            <a href="aviso-legal.html">Mentions Légales</a>
-        </nav>
+        <div class="footer-content">
+            <p>&copy; 2025 Mania Libris. Tous droits réservés.</p>
+            <p>📧 Email: <a href="mailto:info@manialibris.com" style="color: #DAA520; text-decoration: none;">info@manialibris.com</a></p>
+            <div class="footer-links">
+                <a href="politica-privacidade.html">Politique de Confidentialité</a>
+                <a href="aviso-legal.html">Mentions Légales</a>
+            </div>
+        </div>
     </footer>
 </body>
 </html>
