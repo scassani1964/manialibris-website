@@ -1,0 +1,45 @@
+# robots.txt pour Mania Libris
+# Maison d'édition théologique bilingue PT/FR
+
+User-agent: *
+Allow: /
+
+# Sitemap
+Sitemap: https://manialibris.com/sitemap.xml
+
+# Bloquer les répertoires temporaires ou de développement (si présents)
+Disallow: /tmp/
+Disallow: /backup/
+Disallow: /old/
+Disallow: /_drafts/
+
+# Autoriser explicitement les pages principales
+Allow: /index.html
+Allow: /index-fr.html
+Allow: /catalogo.html
+Allow: /catalogue-fr.html
+Allow: /sobre.html
+Allow: /a-propos-fr.html
+Allow: /contato.html
+Allow: /contact-fr.html
+
+# Autoriser les images
+Allow: /images/
+
+# Bloquer les fichiers système (si présents)
+Disallow: /.git/
+Disallow: /.DS_Store
+Disallow: /thumbs.db
+
+# Crawl-delay pour respecter les serveurs (optionnel)
+# Crawl-delay: 1
+
+# Instructions spécifiques pour les principaux bots
+User-agent: Googlebot
+Allow: /
+
+User-agent: Bingbot
+Allow: /
+
+User-agent: Slurp
+Allow: /
