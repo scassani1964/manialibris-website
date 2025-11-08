@@ -1,325 +1,203 @@
-﻿<!DOCTYPE html>
-<html lang="pt-BR">
+<!DOCTYPE html>
+<html lang="pt">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="Mania Libris - Editora de livros sobre fé, tecnologia, psicologia e espiritualidade. Descubra obras que exploram a convergência entre inteligência artificial e teologia.">
-    <title>Mania Libris - Editora de Livros sobre Fé, Tecnologia e Espiritualidade</title>
+    <meta name="description" content="Mania Libris - Maison d'édition théologique proposant des livres en français et portugais sur la théologie, l'exégèse biblique et la spiritualité chrétienne.">
+    <meta name="keywords" content="édition théologique, livres chrétiens, théologie, exégèse biblique, Stéphane Jean Cassani, français, portugais">
+    <title>Mania Libris - Édition Théologique</title>
     <style>
         * {
             margin: 0;
             padding: 0;
             box-sizing: border-box;
         }
-
+        
         body {
-            font-family: 'Georgia', serif;
+            font-family: Georgia, "Times New Roman", Times, serif;
             background-color: #000;
-            color: #f8f8f8;
+            color: #fff;
             line-height: 1.6;
         }
-
-        /* Navigation */
-        nav {
-            background: rgba(0, 0, 0, 0.95);
-            padding: 1.5rem 2rem;
-            position: sticky;
-            top: 0;
-            z-index: 1000;
+        
+        header {
+            background-color: #000;
             border-bottom: 2px solid #DAA520;
+            padding: 1rem 0;
         }
-
+        
+        nav {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+        
         nav ul {
             list-style: none;
             display: flex;
             justify-content: center;
-            flex-wrap: wrap;
             gap: 2rem;
         }
-
+        
         nav a {
             color: #DAA520;
             text-decoration: none;
-            font-weight: bold;
             font-size: 1.1rem;
-            transition: all 0.3s;
-            padding: 0.5rem 1rem;
-            border-radius: 5px;
+            transition: opacity 0.3s;
         }
-
+        
         nav a:hover {
-            background: #DAA520;
-            color: #000;
+            opacity: 0.7;
         }
-
-        /* Hero Section */
+        
         .hero {
             text-align: center;
-            padding: 4rem 2rem;
-            background: linear-gradient(135deg, #1a1a1a 0%, #000 100%);
-            border-bottom: 3px solid #DAA520;
+            padding: 4rem 20px;
+            max-width: 900px;
+            margin: 0 auto;
         }
-
-        .logo {
-            width: 120px;
-            height: 120px;
-            margin: 0 auto 2rem;
-            background: #DAA520;
-            border-radius: 50%;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            font-size: 3rem;
-            font-weight: bold;
-            color: #000;
-            font-family: 'Times New Roman', serif;
-        }
-
-        h1 {
+        
+        .hero h1 {
             color: #DAA520;
             font-size: 3rem;
             margin-bottom: 1rem;
-            text-shadow: 2px 2px 4px rgba(218, 165, 32, 0.3);
         }
-
-        .tagline {
+        
+        .hero p {
             font-size: 1.3rem;
-            color: #ccc;
-            font-style: italic;
             margin-bottom: 2rem;
+            line-height: 1.8;
         }
-
-        /* Container */
-        .container {
-            max-width: 1200px;
-            margin: 0 auto;
-            padding: 3rem 2rem;
-        }
-
-        /* Section Styles */
+        
         .section {
-            margin-bottom: 4rem;
+            max-width: 1000px;
+            margin: 3rem auto;
+            padding: 0 20px;
         }
-
-        h2 {
+        
+        .section h2 {
             color: #DAA520;
-            font-size: 2.5rem;
+            font-size: 2rem;
             margin-bottom: 1.5rem;
             text-align: center;
-            border-bottom: 2px solid #DAA520;
-            padding-bottom: 0.5rem;
         }
-
-        /* Mission */
-        .mission {
-            background: #1a1a1a;
-            padding: 3rem;
-            border-radius: 10px;
-            border-left: 5px solid #DAA520;
-            margin-bottom: 3rem;
-        }
-
-        .mission p {
-            font-size: 1.2rem;
+        
+        .section p {
+            font-size: 1.1rem;
             line-height: 1.8;
+            margin-bottom: 1rem;
             text-align: justify;
         }
-
-        /* Books Grid */
-        .books-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-            gap: 2rem;
-            margin-top: 2rem;
-        }
-
-        .book-card {
-            background: #1a1a1a;
-            border-radius: 10px;
-            padding: 2rem;
+        
+        .cta {
             text-align: center;
-            transition: transform 0.3s, box-shadow 0.3s;
-            border: 2px solid #333;
+            margin: 3rem 0;
         }
-
-        .book-card:hover {
-            transform: translateY(-10px);
-            box-shadow: 0 10px 30px rgba(218, 165, 32, 0.3);
-            border-color: #DAA520;
-        }
-
-        .book-card h3 {
-            color: #DAA520;
-            font-size: 1.8rem;
-            margin-bottom: 1rem;
-        }
-
-        .book-card p {
-            color: #ccc;
-            margin-bottom: 1.5rem;
-            font-size: 1rem;
-            line-height: 1.6;
-        }
-
+        
         .btn {
             display: inline-block;
-            background: #DAA520;
+            background-color: #DAA520;
             color: #000;
-            padding: 0.8rem 2rem;
+            padding: 1rem 2rem;
             text-decoration: none;
-            border-radius: 5px;
+            font-size: 1.1rem;
             font-weight: bold;
-            transition: all 0.3s;
-            margin-top: 1rem;
+            border-radius: 5px;
+            transition: opacity 0.3s;
         }
-
+        
         .btn:hover {
-            background: #c99400;
-            transform: scale(1.05);
+            opacity: 0.8;
         }
-
-        /* Footer */
+        
         footer {
-            background: #0a0a0a;
-            padding: 2rem;
-            text-align: center;
+            background-color: #000;
             border-top: 2px solid #DAA520;
+            text-align: center;
+            padding: 2rem;
+            margin-top: 4rem;
         }
-
+        
         footer p {
-            color: #888;
-        }
-
-        footer a {
             color: #DAA520;
+            margin-bottom: 1rem;
+        }
+        
+        footer nav a {
+            color: #DAA520;
+            margin: 0 1rem;
             text-decoration: none;
         }
-
-        footer a:hover {
-            text-decoration: underline;
-        }
-
-        /* Responsive */
+        
         @media (max-width: 768px) {
-            h1 {
-                font-size: 2rem;
-            }
-
-            .tagline {
-                font-size: 1.1rem;
-            }
-
-            h2 {
-                font-size: 2rem;
-            }
-
             nav ul {
                 flex-direction: column;
                 gap: 1rem;
             }
-
-            .books-grid {
-                grid-template-columns: 1fr;
+            
+            .hero h1 {
+                font-size: 2rem;
+            }
+            
+            .hero p {
+                font-size: 1.1rem;
             }
         }
     </style>
 </head>
 <body>
-    <!-- Navigation -->
-    <nav>
-        <ul>
-            <li><a href="index.html">Início</a></li>
-            <li><a href="catalogo.html">Catálogo</a></li>
-            <li><a href="tua-vontade.html">Tua Vontade</a></li>
-            <li><a href="ta-volonte.html">Ta Volonté</a></li>
-            <li><a href="contato.html">Contato</a></li>
-        </ul>
-    </nav>
+    <header>
+        <nav>
+            <ul>
+                <li><a href="index.html">Início</a></li>
+                <li><a href="catalogo.html">Catálogo</a></li>
+                <li><a href="recursos.html">Recursos</a></li>
+                <li><a href="contato.html">Contato</a></li>
+            </ul>
+        </nav>
+    </header>
 
-    <!-- Hero Section -->
-    <div class="hero">
-        <div class="logo">ML</div>
-        <h1>Mania Libris</h1>
-        <p class="tagline">Editora de Livros sobre Fé, Tecnologia e Espiritualidade</p>
-    </div>
+    <main>
+        <section class="hero">
+            <h1>Mania Libris</h1>
+            <p>Édition théologique bilingue - Livres chrétiens en français et portugais</p>
+            <p>Une maison d'édition dédiée à la réflexion théologique profonde, l'exégèse biblique rigoureuse et la spiritualité chrétienne authentique.</p>
+        </section>
 
-    <!-- Main Content -->
-    <div class="container">
-        <!-- Mission -->
-        <div class="mission">
-            <h2>Nossa Missão Editorial</h2>
+        <section class="section">
+            <h2>Notre Mission</h2>
             <p>
-                A Mania Libris é uma editora dedicada a publicar obras que exploram a interseção entre fé, 
-                tecnologia, psicologia e espiritualidade. Acreditamos que o diálogo entre tradição e inovação 
-                pode nos ajudar a compreender melhor nosso lugar em um mundo em constante transformação. 
-                Nossas publicações desafiam o pensamento convencional e convidam os leitores a uma reflexão 
-                profunda sobre questões fundamentais da existência humana.
+                Mania Libris est une maison d'édition spécialisée dans la publication d'ouvrages théologiques de haute qualité en français et en portugais. Notre mission est de rendre accessible une théologie bibliquement fidèle, intellectuellement rigoureuse et spirituellement enrichissante.
             </p>
-        </div>
-
-        <!-- Featured Books -->
-        <div class="section">
-            <h2>Livros em Destaque</h2>
-            <div class="books-grid">
-                <!-- Book 1: Tua Vontade -->
-                <div class="book-card">
-                    <h3>Tua Vontade</h3>
-                    <p>
-                        Uma exploração revolucionária sobre inteligência artificial, poder divino e a alma humana. 
-                        Este livro examina a convergência NBIC (Nanotecnologia, Biotecnologia, Informática e Ciências Cognitivas) 
-                        através de uma lente teológica única.
-                    </p>
-                    <p><strong>Idioma:</strong> Português</p>
-                    <a href="tua-vontade.html" class="btn">Saiba Mais</a>
-                </div>
-
-                <!-- Book 2: Ta Volonté -->
-                <div class="book-card">
-                    <h3>Ta Volonté</h3>
-                    <p>
-                        Version française de "Tua Vontade". Une exploration révolutionnaire de l'intelligence artificielle, 
-                        du pouvoir divin et de l'âme humaine à travers le prisme de la théologie chrétienne et de 
-                        l'annihilationnisme biblique.
-                    </p>
-                    <p><strong>Idioma:</strong> Français</p>
-                    <a href="ta-volonte.html" class="btn">Saiba Mais</a>
-                </div>
-
-                <!-- Book 3: Aprendi a Estar Contente -->
-                <div class="book-card">
-                    <h3>Aprendi a Estar Contente</h3>
-                    <p>
-                        Lições práticas do Pastor Nilton Santos sobre contentamento e paz interior. 
-                        Um guia psicológico e espiritual para encontrar alegria verdadeira em todas as 
-                        situações da vida.
-                    </p>
-                    <p><strong>Autor:</strong> Pastor Nilton Santos</p>
-                    <a href="aprendi-a-estar-contente.html" class="btn">Saiba Mais</a>
-                </div>
-            </div>
-        </div>
-
-        <!-- Call to Action -->
-        <div class="section" style="text-align: center; background: #1a1a1a; padding: 3rem; border-radius: 10px;">
-            <h2>Descubra Nosso Catálogo Completo</h2>
-            <p style="font-size: 1.2rem; margin: 2rem 0;">
-                Explore nossa coleção completa de obras que desafiam, inspiram e transformam.
+            <p>
+                Nous croyons que la foi chrétienne mérite une réflexion approfondie qui honore à la fois l'Écriture sainte et l'intelligence humaine. Nos publications explorent les grandes questions de la foi, de l'exégèse biblique, de l'eschatologie et de la vie chrétienne dans le monde contemporain.
             </p>
-            <a href="catalogo.html" class="btn" style="font-size: 1.2rem; padding: 1rem 3rem;">Ver Catálogo</a>
-        </div>
-    </div>
+            <p>
+                Chaque ouvrage publié par Mania Libris reflète un engagement envers l'excellence littéraire, la précision théologique et la pertinence spirituelle. Nous servons les lecteurs francophones et lusophones qui cherchent à approfondir leur compréhension de la foi chrétienne.
+            </p>
+        </section>
 
-    <!-- Footer -->
+        <section class="section">
+            <h2>Nos Publications</h2>
+            <p>
+                Notre catalogue comprend actuellement quatre ouvrages théologiques majeurs explorant des thématiques essentielles de la foi chrétienne : l'intersection entre théologie et intelligence artificielle, ainsi que l'exégèse approfondie du récit de la création dans le livre de la Genèse.
+            </p>
+            <p>
+                Tous nos livres sont disponibles en format numérique sur Amazon Kindle, permettant une diffusion mondiale et un accès immédiat aux lecteurs du monde entier.
+            </p>
+        </section>
+
+        <div class="cta">
+            <a href="catalogo.html" class="btn">Découvrir le Catalogue</a>
+        </div>
+    </main>
+
     <footer>
-        <p>&copy; 2025 Mania Libris - Todos os direitos reservados</p>
-        <p>
-            <a href="politica-privacidade.html">Política de Privacidade</a> | 
-            <a href="aviso-legal.html">Aviso Legal</a> | 
-            <a href="contato.html">Contato</a>
-        </p>
-        <p style="margin-top: 1rem;">
-            Email: <a href="mailto:info@manialibris.com">info@manialibris.com</a>
-        </p>
+        <p>&copy; 2025 Mania Libris. Tous droits réservés.</p>
+        <nav>
+            <a href="politica-privacidade.html">Politique de Confidentialité</a>
+            <a href="aviso-legal.html">Mentions Légales</a>
+        </nav>
     </footer>
 </body>
 </html>

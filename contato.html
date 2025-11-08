@@ -1,9 +1,10 @@
-﻿<!DOCTYPE html>
-<html lang="pt-BR">
+<!DOCTYPE html>
+<html lang="pt">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="Entre em contato com Mania Libris - Editora de livros sobre fé, tecnologia e espiritualidade">
+    <meta name="description" content="Contactez Mania Libris - Maison d'édition théologique bilingue français-portugais">
+    <meta name="keywords" content="contact, Mania Libris, édition théologique, Stéphane Jean Cassani">
     <title>Contato - Mania Libris</title>
     <style>
         * {
@@ -11,223 +12,202 @@
             padding: 0;
             box-sizing: border-box;
         }
-
+        
         body {
-            font-family: 'Georgia', serif;
+            font-family: Georgia, "Times New Roman", Times, serif;
             background-color: #000;
-            color: #f8f8f8;
+            color: #fff;
             line-height: 1.6;
         }
-
-        nav {
-            background: rgba(0, 0, 0, 0.95);
-            padding: 1.5rem 2rem;
-            position: sticky;
-            top: 0;
-            z-index: 1000;
+        
+        header {
+            background-color: #000;
             border-bottom: 2px solid #DAA520;
+            padding: 1rem 0;
         }
-
+        
+        nav {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+        
         nav ul {
             list-style: none;
             display: flex;
             justify-content: center;
-            flex-wrap: wrap;
             gap: 2rem;
         }
-
+        
         nav a {
             color: #DAA520;
             text-decoration: none;
-            font-weight: bold;
             font-size: 1.1rem;
-            transition: all 0.3s;
-            padding: 0.5rem 1rem;
-            border-radius: 5px;
+            transition: opacity 0.3s;
         }
-
+        
         nav a:hover {
-            background: #DAA520;
-            color: #000;
+            opacity: 0.7;
         }
-
-        .page-header {
+        
+        .page-title {
             text-align: center;
-            padding: 3rem 2rem;
-            background: linear-gradient(135deg, #1a1a1a 0%, #000 100%);
-            border-bottom: 3px solid #DAA520;
+            padding: 3rem 20px 2rem;
         }
-
-        h1 {
+        
+        .page-title h1 {
             color: #DAA520;
-            font-size: 3rem;
+            font-size: 2.5rem;
             margin-bottom: 1rem;
         }
-
-        .subtitle {
-            font-size: 1.3rem;
-            color: #ccc;
-            font-style: italic;
+        
+        .page-title p {
+            font-size: 1.2rem;
         }
-
-        .container {
+        
+        .contact-container {
             max-width: 800px;
-            margin: 0 auto;
-            padding: 3rem 2rem;
+            margin: 3rem auto;
+            padding: 0 20px;
         }
-
+        
         .contact-section {
-            background: #1a1a1a;
-            border-radius: 10px;
-            padding: 3rem;
-            margin-bottom: 3rem;
-            border-left: 5px solid #DAA520;
+            background-color: #111;
+            border: 2px solid #DAA520;
+            padding: 2rem;
+            border-radius: 8px;
+            margin-bottom: 2rem;
         }
-
-        h2 {
+        
+        .contact-section h2 {
             color: #DAA520;
-            font-size: 2rem;
+            font-size: 1.8rem;
             margin-bottom: 1.5rem;
         }
-
+        
+        .contact-section p {
+            font-size: 1.1rem;
+            line-height: 1.8;
+            margin-bottom: 1rem;
+        }
+        
         .contact-info {
-            font-size: 1.2rem;
-            line-height: 2;
+            margin: 1.5rem 0;
         }
-
+        
         .contact-info p {
-            margin: 1rem 0;
-            display: flex;
-            align-items: center;
-            gap: 1rem;
+            margin-bottom: 0.8rem;
         }
-
+        
+        .contact-info strong {
+            color: #DAA520;
+        }
+        
         .contact-info a {
             color: #DAA520;
             text-decoration: none;
-            transition: all 0.3s;
+            transition: opacity 0.3s;
         }
-
+        
         .contact-info a:hover {
-            color: #c99400;
+            opacity: 0.7;
             text-decoration: underline;
         }
-
-        .icon {
-            color: #DAA520;
-            font-size: 1.5rem;
-            width: 30px;
-        }
-
+        
         footer {
-            background: #0a0a0a;
-            padding: 2rem;
-            text-align: center;
+            background-color: #000;
             border-top: 2px solid #DAA520;
+            text-align: center;
+            padding: 2rem;
+            margin-top: 4rem;
         }
-
+        
         footer p {
-            color: #888;
-        }
-
-        footer a {
             color: #DAA520;
+            margin-bottom: 1rem;
+        }
+        
+        footer nav a {
+            color: #DAA520;
+            margin: 0 1rem;
             text-decoration: none;
         }
-
-        footer a:hover {
-            text-decoration: underline;
-        }
-
+        
         @media (max-width: 768px) {
-            h1 {
-                font-size: 2rem;
-            }
-
             nav ul {
                 flex-direction: column;
                 gap: 1rem;
+            }
+            
+            .page-title h1 {
+                font-size: 2rem;
             }
         }
     </style>
 </head>
 <body>
-    <nav>
-        <ul>
-            <li><a href="index.html">Início</a></li>
-            <li><a href="catalogo.html">Catálogo</a></li>
-            <li><a href="tua-vontade.html">Tua Vontade</a></li>
-            <li><a href="ta-volonte.html">Ta Volonté</a></li>
-            <li><a href="contato.html">Contato</a></li>
-        </ul>
-    </nav>
+    <header>
+        <nav>
+            <ul>
+                <li><a href="index.html">Início</a></li>
+                <li><a href="catalogo.html">Catálogo</a></li>
+                <li><a href="recursos.html">Recursos</a></li>
+                <li><a href="contato.html">Contato</a></li>
+            </ul>
+        </nav>
+    </header>
 
-    <div class="page-header">
-        <h1>Entre em Contato</h1>
-        <p class="subtitle">Estamos aqui para responder suas perguntas</p>
-    </div>
+    <main>
+        <section class="page-title">
+            <h1>Contato</h1>
+            <p>Entre em contato com Mania Libris</p>
+        </section>
 
-    <div class="container">
-        <div class="contact-section">
-            <h2>Informações de Contato</h2>
-            <div class="contact-info">
+        <div class="contact-container">
+            <div class="contact-section">
+                <h2>Informations de Contact</h2>
                 <p>
-                    <span class="icon">✉</span>
-                    <span>Email: <a href="mailto:info@manialibris.com">info@manialibris.com</a></span>
+                    Nous serions ravis d'entendre vos commentaires, questions ou suggestions concernant nos publications. N'hésitez pas à nous contacter pour toute demande d'information.
+                </p>
+                
+                <div class="contact-info">
+                    <p><strong>Email:</strong> <a href="mailto:info@manialibris.com">info@manialibris.com</a></p>
+                    <p><strong>Éditeur:</strong> Stéphane Jean Cassani</p>
+                    <p><strong>Localisation:</strong> Suisse</p>
+                </div>
+            </div>
+
+            <div class="contact-section">
+                <h2>Questions Fréquentes</h2>
+                <p>
+                    <strong>Où puis-je acheter vos livres?</strong><br>
+                    Tous nos livres sont disponibles en format numérique sur Amazon Kindle. Vous trouverez les liens directs sur les pages individuelles de chaque livre dans notre catalogue.
                 </p>
                 <p>
-                    <span class="icon">📍</span>
-                    <span>Localização: La Tour-de-Peilz, Suíça</span>
+                    <strong>Proposez-vous des versions papier?</strong><br>
+                    Actuellement, nos ouvrages sont disponibles uniquement en format numérique Kindle. Nous envisageons des éditions papier pour l'avenir.
+                </p>
+                <p>
+                    <strong>Puis-je suggérer un sujet pour un futur livre?</strong><br>
+                    Absolument! Nous sommes toujours intéressés par les suggestions de nos lecteurs. Contactez-nous par email avec vos idées.
+                </p>
+            </div>
+
+            <div class="contact-section">
+                <h2>Suivez-nous</h2>
+                <p>
+                    Restez informé de nos nouvelles publications et ressources en visitant régulièrement notre site web. Nous publions régulièrement de nouveaux contenus théologiques et des ressources bibliques.
                 </p>
             </div>
         </div>
-
-        <div class="contact-section">
-            <h2>Sobre a Mania Libris</h2>
-            <p style="font-size: 1.1rem; line-height: 1.8; text-align: justify;">
-                A Mania Libris é uma editora dedicada a publicar obras que exploram a interseção entre fé, 
-                tecnologia, psicologia e espiritualidade. Nossa missão é promover o diálogo entre tradição 
-                e inovação através de publicações que desafiam o pensamento convencional.
-            </p>
-        </div>
-
-        <div class="contact-section">
-            <h2>Propostas de Publicação</h2>
-            <p style="font-size: 1.1rem; line-height: 1.8; text-align: justify;">
-                Se você é autor e tem uma obra que se alinha com nossa linha editorial, 
-                entre em contato conosco. Estamos sempre abertos a novas propostas que 
-                explorem temas relacionados à fé, tecnologia e espiritualidade.
-            </p>
-            <p style="font-size: 1.1rem; margin-top: 1rem;">
-                Envie sua proposta para: <a href="mailto:info@manialibris.com" style="color: #DAA520;">info@manialibris.com</a>
-            </p>
-        </div>
-
-        <div class="contact-section">
-            <h2>Perguntas Frequentes</h2>
-            <div style="margin-top: 1.5rem;">
-                <h3 style="color: #DAA520; font-size: 1.3rem; margin-top: 1.5rem;">Onde posso comprar os livros?</h3>
-                <p style="margin-top: 0.5rem;">Nossos livros estão disponíveis na Amazon em formato digital e impresso.</p>
-
-                <h3 style="color: #DAA520; font-size: 1.3rem; margin-top: 1.5rem;">Vocês aceitam manuscritos?</h3>
-                <p style="margin-top: 0.5rem;">Sim! Entre em contato conosco com sua proposta detalhada.</p>
-
-                <h3 style="color: #DAA520; font-size: 1.3rem; margin-top: 1.5rem;">Os livros estão disponíveis em outras línguas?</h3>
-                <p style="margin-top: 0.5rem;">Atualmente publicamos em português e francês. Consulte nosso catálogo para ver as línguas disponíveis de cada título.</p>
-            </div>
-        </div>
-    </div>
+    </main>
 
     <footer>
-        <p>&copy; 2025 Mania Libris - Todos os direitos reservados</p>
-        <p>
-            <a href="politica-privacidade.html">Política de Privacidade</a> | 
-            <a href="aviso-legal.html">Aviso Legal</a> | 
-            <a href="contato.html">Contato</a>
-        </p>
-        <p style="margin-top: 1rem;">
-            Email: <a href="mailto:info@manialibris.com">info@manialibris.com</a>
-        </p>
+        <p>&copy; 2025 Mania Libris. Tous droits réservés.</p>
+        <nav>
+            <a href="politica-privacidade.html">Politique de Confidentialité</a>
+            <a href="aviso-legal.html">Mentions Légales</a>
+        </nav>
     </footer>
 </body>
 </html>
