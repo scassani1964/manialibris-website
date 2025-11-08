@@ -1,0 +1,373 @@
+<!DOCTYPE html>
+<html lang="fr-FR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Mania Libris - Maison d'édition de livres sur la foi, la technologie et la spiritualité. Découvrez des ouvrages qui explorent la convergence entre intelligence artificielle et théologie.">
+    <meta name="keywords" content="théologie, intelligence artificielle, spiritualité, livres chrétiens, NBIC, annihilationnisme, IA et foi, technologie et religion">
+    <title>Mania Libris - Maison d'Édition de Livres sur la Foi, la Technologie et la Spiritualité</title>
+    
+    <!-- BALISES HREFLANG -->
+    <link rel="alternate" hreflang="pt-BR" href="https://manialibris.com/index.html">
+    <link rel="alternate" hreflang="fr-FR" href="https://manialibris.com/index-fr.html">
+    <link rel="alternate" hreflang="x-default" href="https://manialibris.com/index.html">
+    
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Georgia', serif;
+            background-color: #000;
+            color: #f8f8f8;
+            line-height: 1.6;
+        }
+
+        /* SÉLECTEUR DE LANGUE */
+        .language-selector {
+            position: fixed;
+            top: 20px;
+            right: 20px;
+            background: #000;
+            padding: 10px 20px;
+            border: 2px solid #DAA520;
+            border-radius: 5px;
+            z-index: 2000;
+        }
+        
+        .language-selector a {
+            color: #DAA520;
+            text-decoration: none;
+            font-weight: bold;
+            margin: 0 10px;
+            transition: color 0.3s;
+        }
+        
+        .language-selector a:hover {
+            color: #fff;
+        }
+        
+        .language-selector a.active {
+            color: #fff;
+            border-bottom: 2px solid #DAA520;
+        }
+
+        /* Navigation */
+        nav {
+            background: rgba(0, 0, 0, 0.95);
+            padding: 1.5rem 2rem;
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+            border-bottom: 2px solid #DAA520;
+        }
+
+        nav ul {
+            list-style: none;
+            display: flex;
+            justify-content: center;
+            flex-wrap: wrap;
+            gap: 2rem;
+        }
+
+        nav a {
+            color: #DAA520;
+            text-decoration: none;
+            font-weight: bold;
+            font-size: 1.1rem;
+            transition: all 0.3s;
+            padding: 0.5rem 1rem;
+            border-radius: 5px;
+        }
+
+        nav a:hover {
+            background: #DAA520;
+            color: #000;
+        }
+
+        /* Hero Section */
+        .hero {
+            text-align: center;
+            padding: 4rem 2rem;
+            background: linear-gradient(135deg, #1a1a1a 0%, #000 100%);
+            border-bottom: 3px solid #DAA520;
+        }
+
+        .logo {
+            width: 120px;
+            height: 120px;
+            margin: 0 auto 2rem;
+            background: #DAA520;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 3rem;
+            font-weight: bold;
+            color: #000;
+            font-family: 'Times New Roman', serif;
+        }
+
+        h1 {
+            color: #DAA520;
+            font-size: 3rem;
+            margin-bottom: 1rem;
+            text-shadow: 2px 2px 4px rgba(218, 165, 32, 0.3);
+        }
+
+        .tagline {
+            font-size: 1.3rem;
+            color: #ccc;
+            font-style: italic;
+            margin-bottom: 2rem;
+        }
+
+        /* Container */
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 3rem 2rem;
+        }
+
+        /* Section Styles */
+        .section {
+            margin-bottom: 4rem;
+        }
+
+        h2 {
+            color: #DAA520;
+            font-size: 2.5rem;
+            margin-bottom: 1.5rem;
+            text-align: center;
+            border-bottom: 2px solid #DAA520;
+            padding-bottom: 0.5rem;
+        }
+
+        /* Mission */
+        .mission {
+            background: #1a1a1a;
+            padding: 3rem;
+            border-radius: 10px;
+            border-left: 5px solid #DAA520;
+            margin-bottom: 3rem;
+        }
+
+        .mission p {
+            font-size: 1.2rem;
+            line-height: 1.8;
+            text-align: justify;
+        }
+
+        /* Books Grid */
+        .books-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+            margin-top: 2rem;
+        }
+
+        .book-card {
+            background: #1a1a1a;
+            border-radius: 10px;
+            padding: 2rem;
+            text-align: center;
+            transition: transform 0.3s, box-shadow 0.3s;
+            border: 2px solid #333;
+        }
+
+        .book-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 10px 30px rgba(218, 165, 32, 0.3);
+            border-color: #DAA520;
+        }
+
+        .book-card h3 {
+            color: #DAA520;
+            font-size: 1.8rem;
+            margin-bottom: 1rem;
+        }
+
+        .book-card p {
+            color: #ccc;
+            margin-bottom: 1.5rem;
+            font-size: 1rem;
+            line-height: 1.6;
+        }
+
+        .btn {
+            display: inline-block;
+            background: #DAA520;
+            color: #000;
+            padding: 0.8rem 2rem;
+            text-decoration: none;
+            border-radius: 5px;
+            font-weight: bold;
+            transition: all 0.3s;
+            margin-top: 1rem;
+        }
+
+        .btn:hover {
+            background: #c99400;
+            transform: scale(1.05);
+        }
+
+        /* Footer */
+        footer {
+            background: #0a0a0a;
+            padding: 2rem;
+            text-align: center;
+            border-top: 2px solid #DAA520;
+        }
+
+        footer p {
+            color: #888;
+        }
+
+        footer a {
+            color: #DAA520;
+            text-decoration: none;
+        }
+
+        footer a:hover {
+            text-decoration: underline;
+        }
+
+        /* Responsive */
+        @media (max-width: 768px) {
+            h1 {
+                font-size: 2rem;
+            }
+
+            .tagline {
+                font-size: 1.1rem;
+            }
+
+            h2 {
+                font-size: 2rem;
+            }
+
+            nav ul {
+                flex-direction: column;
+                gap: 1rem;
+            }
+
+            .books-grid {
+                grid-template-columns: 1fr;
+            }
+            
+            .language-selector {
+                top: 10px;
+                right: 10px;
+                padding: 8px 15px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- SÉLECTEUR DE LANGUE -->
+    <div class="language-selector">
+        <a href="index.html">🇧🇷 PT</a>
+        <span style="color: #DAA520;">|</span>
+        <a href="index-fr.html" class="active">🇫🇷 FR</a>
+    </div>
+
+    <!-- Navigation -->
+    <nav>
+        <ul>
+            <li><a href="index-fr.html">Accueil</a></li>
+            <li><a href="catalogue-fr.html">Catalogue</a></li>
+            <li><a href="ressources.html">Ressources</a></li>
+            <li><a href="contact-fr.html">Contact</a></li>
+        </ul>
+    </nav>
+
+    <!-- Hero Section -->
+    <div class="hero">
+        <div class="logo">ML</div>
+        <h1>Mania Libris</h1>
+        <p class="tagline">Maison d'Édition de Livres sur la Foi, la Technologie et la Spiritualité</p>
+    </div>
+
+    <!-- Main Content -->
+    <div class="container">
+        <!-- Mission -->
+        <div class="mission">
+            <h2>Notre Mission Éditoriale</h2>
+            <p>
+                Mania Libris est une maison d'édition dédiée à la publication d'ouvrages qui explorent l'intersection 
+                entre foi, technologie, psychologie et spiritualité. Nous croyons que le dialogue entre tradition 
+                et innovation peut nous aider à mieux comprendre notre place dans un monde en constante transformation. 
+                Nos publications défient la pensée conventionnelle et invitent les lecteurs à une réflexion profonde 
+                sur les questions fondamentales de l'existence humaine.
+            </p>
+        </div>
+
+        <!-- Featured Books -->
+        <div class="section">
+            <h2>Livres en Vedette</h2>
+            <div class="books-grid">
+                <!-- Book 1: Ta Volonté -->
+                <div class="book-card">
+                    <h3>Ta Volonté</h3>
+                    <p>
+                        Une exploration révolutionnaire de l'intelligence artificielle, du pouvoir divin et de l'âme humaine. 
+                        Ce livre examine la convergence NBIC (Nanotechnologie, Biotechnologie, Informatique et Sciences Cognitives) 
+                        à travers une lentille théologique unique.
+                    </p>
+                    <p><strong>Langue:</strong> Français</p>
+                    <a href="ta-volonte.html" class="btn">En savoir plus</a>
+                </div>
+
+                <!-- Book 2: Le Côté d'Adam -->
+                <div class="book-card">
+                    <h3>Le Côté d'Adam</h3>
+                    <p>
+                        Une analyse exégétique novatrice de Genèse 2:21-22, explorant la traduction hébraïque du mot "tsela" 
+                        et ses implications théologiques. Une compréhension plus précise du texte original transforme notre 
+                        perception de la création d'Ève.
+                    </p>
+                    <p><strong>Langue:</strong> Français</p>
+                    <a href="le-cote-d-adam.html" class="btn">En savoir plus</a>
+                </div>
+
+                <!-- Book 3: J'ai Appris à Être Content -->
+                <div class="book-card">
+                    <h3>J'ai Appris à Être Content</h3>
+                    <p>
+                        Leçons pratiques du Pasteur Nilton Santos sur le contentement et la paix intérieure. 
+                        Un guide psychologique et spirituel pour trouver la vraie joie dans toutes les 
+                        situations de la vie.
+                    </p>
+                    <p><strong>Auteur:</strong> Pasteur Nilton Santos</p>
+                    <a href="jai-appris-a-etre-content.html" class="btn">En savoir plus</a>
+                </div>
+            </div>
+        </div>
+
+        <!-- Call to Action -->
+        <div class="section" style="text-align: center; background: #1a1a1a; padding: 3rem; border-radius: 10px;">
+            <h2>Découvrez Notre Catalogue Complet</h2>
+            <p style="font-size: 1.2rem; margin: 2rem 0;">
+                Explorez notre collection complète d'ouvrages qui défient, inspirent et transforment.
+            </p>
+            <a href="catalogue-fr.html" class="btn" style="font-size: 1.2rem; padding: 1rem 3rem;">Voir le Catalogue</a>
+        </div>
+    </div>
+
+    <!-- Footer -->
+    <footer>
+        <p>&copy; 2025 Mania Libris - Tous droits réservés</p>
+        <p>
+            <a href="politique-confidentialite.html">Politique de Confidentialité</a> | 
+            <a href="mentions-legales.html">Mentions Légales</a> | 
+            <a href="contact-fr.html">Contact</a>
+        </p>
+        <p style="margin-top: 1rem;">
+            Email: <a href="mailto:info@manialibris.com">info@manialibris.com</a>
+        </p>
+    </footer>
+</body>
+</html>
