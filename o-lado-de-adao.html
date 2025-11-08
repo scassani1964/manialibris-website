@@ -1,0 +1,410 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="O Lado de Adão - Uma leitura linguística, exegética e teológica de Gênesis 2 por Stéphane Jean Cassani">
+    <meta name="keywords" content="Adão, Gênesis, teologia bíblica, exegese, igualdade homem-mulher, Midraxe, estudos bíblicos">
+    <title>O Lado de Adão | Mania Libris</title>
+    
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: Georgia, 'Times New Roman', Times, serif;
+            background-color: #000;
+            color: #fff;
+            line-height: 1.6;
+        }
+
+        /* Navigation */
+        nav {
+            background-color: #000;
+            padding: 20px 0;
+            position: sticky;
+            top: 0;
+            z-index: 100;
+            border-bottom: 2px solid #DAA520;
+            backdrop-filter: blur(10px);
+        }
+
+        .nav-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 0 40px;
+        }
+
+        .logo {
+            display: flex;
+            align-items: center;
+            gap: 15px;
+            text-decoration: none;
+        }
+
+        .logo-circle {
+            width: 60px;
+            height: 60px;
+        }
+
+        .logo-text {
+            color: #DAA520;
+            font-size: 1.5em;
+            font-weight: normal;
+        }
+
+        .nav-links {
+            display: flex;
+            gap: 30px;
+            list-style: none;
+        }
+
+        .nav-links a {
+            color: #DAA520;
+            text-decoration: none;
+            font-size: 1.1em;
+            transition: all 0.3s ease;
+        }
+
+        .nav-links a:hover {
+            color: #FFC125;
+        }
+
+        /* Hero Section */
+        .hero {
+            padding: 80px 40px;
+            text-align: center;
+            border-bottom: 2px solid #DAA520;
+        }
+
+        .hero h1 {
+            font-size: 2.5em;
+            color: #DAA520;
+            margin-bottom: 20px;
+        }
+
+        .hero .subtitle {
+            font-size: 1.3em;
+            color: #fff;
+            margin-bottom: 15px;
+            font-style: italic;
+        }
+
+        .hero .author {
+            font-size: 1.2em;
+            color: #DAA520;
+        }
+
+        /* Container */
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 60px 40px;
+        }
+
+        /* Sections */
+        section {
+            margin-bottom: 60px;
+        }
+
+        h2 {
+            font-size: 2em;
+            color: #DAA520;
+            margin-bottom: 30px;
+            border-bottom: 2px solid #DAA520;
+            padding-bottom: 10px;
+        }
+
+        h3 {
+            font-size: 1.5em;
+            color: #DAA520;
+            margin-bottom: 20px;
+        }
+
+        p {
+            font-size: 1.1em;
+            margin-bottom: 20px;
+            text-align: justify;
+        }
+
+        /* Book Info Grid */
+        .book-info {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 30px;
+            margin-top: 30px;
+        }
+
+        .info-item {
+            background-color: #111;
+            padding: 20px;
+            border: 2px solid #DAA520;
+            border-radius: 5px;
+        }
+
+        .info-item strong {
+            color: #DAA520;
+            display: block;
+            margin-bottom: 10px;
+            font-size: 1.1em;
+        }
+
+        /* Themes List */
+        .themes-list {
+            list-style: none;
+            padding: 0;
+        }
+
+        .themes-list li {
+            padding: 15px 20px;
+            margin-bottom: 10px;
+            background-color: #111;
+            border-left: 4px solid #DAA520;
+            font-size: 1.1em;
+        }
+
+        .themes-list li::before {
+            content: "▹ ";
+            color: #DAA520;
+            font-weight: bold;
+            margin-right: 10px;
+        }
+
+        /* Quote */
+        blockquote {
+            background-color: #111;
+            border-left: 5px solid #DAA520;
+            padding: 30px;
+            margin: 40px 0;
+            font-style: italic;
+            font-size: 1.2em;
+            color: #DAA520;
+        }
+
+        blockquote cite {
+            display: block;
+            margin-top: 20px;
+            font-size: 0.9em;
+            color: #fff;
+            font-style: normal;
+        }
+
+        /* CTA Section */
+        .cta-section {
+            text-align: center;
+            padding: 60px 40px;
+            background-color: #111;
+            border: 2px solid #DAA520;
+            border-radius: 10px;
+        }
+
+        .btn {
+            display: inline-block;
+            background-color: #DAA520;
+            color: #000;
+            padding: 15px 40px;
+            text-decoration: none;
+            font-size: 1.1em;
+            border-radius: 5px;
+            transition: all 0.3s ease;
+            margin: 10px;
+        }
+
+        .btn:hover {
+            background-color: #FFC125;
+            transform: translateY(-2px);
+        }
+
+        .btn-secondary {
+            background-color: transparent;
+            color: #DAA520;
+            border: 2px solid #DAA520;
+        }
+
+        .btn-secondary:hover {
+            background-color: #DAA520;
+            color: #000;
+        }
+
+        /* Footer */
+        footer {
+            background-color: #000;
+            border-top: 2px solid #DAA520;
+            padding: 40px 0;
+            margin-top: 80px;
+        }
+
+        .footer-content {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 40px;
+            text-align: center;
+        }
+
+        .footer-content p {
+            margin-bottom: 20px;
+            text-align: center;
+        }
+
+        .footer-links {
+            display: flex;
+            justify-content: center;
+            gap: 30px;
+            flex-wrap: wrap;
+        }
+
+        .footer-links a {
+            color: #DAA520;
+            text-decoration: none;
+            transition: color 0.3s ease;
+        }
+
+        .footer-links a:hover {
+            color: #FFC125;
+        }
+
+        /* Responsive */
+        @media (max-width: 768px) {
+            .nav-container {
+                padding: 0 20px;
+            }
+
+            .nav-links {
+                gap: 15px;
+                font-size: 0.9em;
+            }
+
+            .hero h1 {
+                font-size: 2em;
+            }
+
+            .container {
+                padding: 40px 20px;
+            }
+
+            section {
+                margin-bottom: 40px;
+            }
+
+            h2 {
+                font-size: 1.5em;
+            }
+
+            .book-info {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Navigation -->
+    <nav>
+        <div class="nav-container">
+            <a href="index.html" class="logo">
+                <svg class="logo-circle" width="60" height="60" viewBox="0 0 60 60">
+                    <circle cx="30" cy="30" r="28" fill="none" stroke="#DAA520" stroke-width="2"/>
+                    <text x="30" y="38" font-family="Georgia" font-size="24" fill="#DAA520" text-anchor="middle">ML</text>
+                </svg>
+                <span class="logo-text">Mania Libris</span>
+            </a>
+            <ul class="nav-links">
+                <li><a href="index.html">Início</a></li>
+                <li><a href="catalogo.html">Catálogo</a></li>
+                <li><a href="contato.html">Contato</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <div class="hero">
+        <h1>O Lado de Adão</h1>
+        <p class="subtitle">Uma Nova Leitura de Gênesis 2</p>
+        <p class="author">Stéphane Jean Cassani</p>
+    </div>
+
+    <!-- Main Content -->
+    <div class="container">
+        <!-- About the Book -->
+        <section>
+            <h2>Sobre o Livro</h2>
+            <p>"O Lado de Adão" oferece uma leitura linguística, exegética e teológica da palavra hebraica "tsela" (צלע) empregada em Gênesis para descrever a criação de Eva. Através de uma análise rigorosa do texto bíblico original, este trabalho questiona as traduções tradicionais e as interpretações clássicas que atravessaram séculos.</p>
+            <p>Por meio do estudo do Midraxe rabínico, da tradição cristã e das descobertas linguísticas modernas, esta obra revela um significado profundo: o da igualdade fundamental entre homem e mulher. A noção tradicional de "costela" cede lugar a uma compreensão muito mais rica e justa do desígnio divino.</p>
+            <p>Esta nova leitura de Gênesis 2 enriquece nossa compreensão das Escrituras e oferece uma perspectiva teológica renovada sobre a igualdade ontológica entre os sexos. Uma obra essencial para pesquisadores, teólogos e todos aqueles que desejam aprofundar seu conhecimento do texto bíblico original.</p>
+        </section>
+
+        <!-- Book Info -->
+        <section>
+            <h2>Detalhes do Livro</h2>
+            <div class="book-info">
+                <div class="info-item">
+                    <strong>Autor</strong>
+                    <span>Stéphane Jean Cassani</span>
+                </div>
+                <div class="info-item">
+                    <strong>Idioma</strong>
+                    <span>Português (Brasil)</span>
+                </div>
+                <div class="info-item">
+                    <strong>Gênero</strong>
+                    <span>Teologia, Estudos Bíblicos</span>
+                </div>
+                <div class="info-item">
+                    <strong>Formato</strong>
+                    <span>eBook Kindle</span>
+                </div>
+            </div>
+        </section>
+
+        <!-- Main Themes -->
+        <section>
+            <h2>Temas Principais</h2>
+            <ul class="themes-list">
+                <li>Análise linguística da palavra hebraica "tsela"</li>
+                <li>Exegese bíblica comparativa (Antigo Testamento)</li>
+                <li>Teologia da igualdade homem-mulher</li>
+                <li>Midraxe rabínico e tradição cristã</li>
+                <li>Renovação da compreensão teológica clássica</li>
+                <li>Implicações pastorais e eclesiológicas</li>
+            </ul>
+        </section>
+
+        <!-- Quote -->
+        <blockquote>
+            "Se Eva foi criada desde um lado de Adão, as implicações teológicas são radicais: uma igualdade ontológica absoluta, uma reciprocidade na comunhão, uma unidade perdida e reencontrada em Cristo."
+            <cite>— Stéphane Jean Cassani, O Lado de Adão</cite>
+        </blockquote>
+
+        <!-- Target Audience -->
+        <section>
+            <h2>Para Quem é Este Livro?</h2>
+            <p>Este livro se dirige aos estudantes de teologia e exegese bíblica, pastores e líderes eclesiásticos, pesquisadores em bíblica e a todos aqueles que desejam aprofundar sua compreensão do texto bíblico original. Interessa também homens e mulheres em busca de uma teologia mais inclusiva e justa.</p>
+            <p>A obra oferece uma perspectiva inovadora para renovar o diálogo entre fé e ciência exegética. Contribui à reflexão eclesial sobre igualdade e dignidade de todos os seres humanos, fundamentada no próprio texto bíblico.</p>
+        </section>
+
+        <!-- Call to Action -->
+        <div class="cta-section">
+            <h2>Obtenha Seu Exemplar</h2>
+            <p>Disponível em formato eBook Kindle - Acesse esta nova leitura teológica de onde estiver.</p>
+            <a href="https://www.amazon.com.br/s?k=O+Lado+de+Adão" class="btn" target="_blank">Comprar na Amazon Kindle</a>
+            <a href="catalogo.html" class="btn btn-secondary">Voltar ao Catálogo</a>
+        </div>
+    </div>
+
+    <!-- Footer -->
+    <footer>
+        <div class="footer-content">
+            <p>&copy; 2025 Mania Libris. Todos os direitos reservados.</p>
+            <div class="footer-links">
+                <a href="politica-privacidade.html">Política de Privacidade</a>
+                <a href="aviso-legal.html">Aviso Legal</a>
+            </div>
+        </div>
+    </footer>
+</body>
+</html>
