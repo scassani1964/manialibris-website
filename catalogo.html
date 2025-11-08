@@ -1,310 +1,232 @@
 <!DOCTYPE html>
-<html lang="fr">
+<html lang="pt">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="Catalogue des ebooks Mania Libris - Publications théologiques en français et portugais">
-    <meta name="keywords" content="ebooks théologiques, Mania Libris, édition religieuse, études bibliques, théologie">
-    <title>Catalogue | Mania Libris</title>
-    
+    <meta name="description" content="Catalogue Mania Libris - Découvrez nos livres théologiques en français et portugais sur la théologie, l'IA, l'eschatologie et l'exégèse biblique.">
+    <meta name="keywords" content="catalogue théologique, livres chrétiens, Stéphane Jean Cassani, théologie, exégèse, IA">
+    <title>Catalogue - Mania Libris</title>
     <style>
         * {
             margin: 0;
             padding: 0;
             box-sizing: border-box;
         }
-
+        
         body {
-            font-family: Georgia, 'Times New Roman', Times, serif;
+            font-family: Georgia, "Times New Roman", Times, serif;
             background-color: #000;
             color: #fff;
             line-height: 1.6;
         }
-
-        /* Navigation */
-        nav {
+        
+        header {
             background-color: #000;
-            padding: 20px 0;
-            position: sticky;
-            top: 0;
-            z-index: 100;
             border-bottom: 2px solid #DAA520;
-            backdrop-filter: blur(10px);
+            padding: 1rem 0;
         }
-
-        .nav-container {
+        
+        nav {
             max-width: 1200px;
             margin: 0 auto;
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            padding: 0 40px;
+            padding: 0 20px;
         }
-
-        .logo {
-            display: flex;
-            align-items: center;
-            gap: 15px;
-            text-decoration: none;
-        }
-
-        .logo-circle {
-            width: 60px;
-            height: 60px;
-        }
-
-        .logo-text {
-            color: #DAA520;
-            font-size: 1.5em;
-            font-weight: normal;
-        }
-
-        .nav-links {
-            display: flex;
-            gap: 30px;
+        
+        nav ul {
             list-style: none;
+            display: flex;
+            justify-content: center;
+            gap: 2rem;
         }
-
-        .nav-links a {
+        
+        nav a {
             color: #DAA520;
             text-decoration: none;
-            font-size: 1.1em;
-            transition: all 0.3s ease;
+            font-size: 1.1rem;
+            transition: opacity 0.3s;
         }
-
-        .nav-links a:hover {
-            color: #FFC125;
+        
+        nav a:hover {
+            opacity: 0.7;
         }
-
-        /* Page Header */
-        .page-header {
-            padding: 60px 40px;
+        
+        .page-title {
             text-align: center;
-            border-bottom: 2px solid #DAA520;
+            padding: 3rem 20px 2rem;
         }
-
-        .page-header h1 {
-            font-size: 2.5em;
+        
+        .page-title h1 {
             color: #DAA520;
-            margin-bottom: 20px;
+            font-size: 2.5rem;
+            margin-bottom: 1rem;
         }
-
-        .page-header p {
-            font-size: 1.2em;
-            color: #fff;
+        
+        .page-title p {
+            font-size: 1.2rem;
         }
-
-        /* Container */
-        .container {
+        
+        .books-grid {
             max-width: 1200px;
-            margin: 0 auto;
-            padding: 60px 40px;
-        }
-
-        /* Catalogue Grid */
-        .catalogue-grid {
+            margin: 2rem auto;
+            padding: 0 20px;
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-            gap: 40px;
-            margin-bottom: 60px;
+            gap: 2rem;
         }
-
-        /* Book Card */
+        
         .book-card {
             background-color: #111;
             border: 2px solid #DAA520;
-            padding: 30px;
+            padding: 2rem;
             border-radius: 8px;
-            transition: all 0.3s ease;
-            display: flex;
-            flex-direction: column;
+            transition: transform 0.3s;
         }
-
+        
         .book-card:hover {
-            background-color: #1a1a1a;
-            border-color: #FFC125;
             transform: translateY(-5px);
         }
-
+        
         .book-card h3 {
-            font-size: 1.6em;
             color: #DAA520;
-            margin-bottom: 15px;
+            font-size: 1.5rem;
+            margin-bottom: 0.5rem;
         }
-
+        
         .book-card .author {
-            color: #FFC125;
+            color: #DAA520;
             font-style: italic;
-            margin-bottom: 10px;
-            font-size: 1em;
+            margin-bottom: 0.5rem;
         }
-
+        
         .book-card .language {
-            color: #fff;
-            margin-bottom: 20px;
-            font-size: 0.95em;
-            border-bottom: 1px solid #DAA520;
-            padding-bottom: 15px;
+            color: #999;
+            font-size: 0.9rem;
+            margin-bottom: 1rem;
         }
-
+        
         .book-card .description {
-            font-size: 0.95em;
-            margin-bottom: 25px;
-            flex-grow: 1;
+            line-height: 1.7;
+            margin-bottom: 1.5rem;
             text-align: justify;
         }
-
-        .book-card .btn {
+        
+        .btn {
             display: inline-block;
             background-color: #DAA520;
             color: #000;
-            padding: 12px 25px;
+            padding: 0.8rem 1.5rem;
             text-decoration: none;
-            font-size: 1em;
+            font-weight: bold;
             border-radius: 5px;
-            transition: all 0.3s ease;
-            text-align: center;
+            transition: opacity 0.3s;
         }
-
-        .book-card .btn:hover {
-            background-color: #FFC125;
-            transform: translateX(5px);
+        
+        .btn:hover {
+            opacity: 0.8;
         }
-
-        /* Footer */
+        
         footer {
             background-color: #000;
             border-top: 2px solid #DAA520;
-            padding: 40px 0;
-            margin-top: 80px;
-        }
-
-        .footer-content {
-            max-width: 1200px;
-            margin: 0 auto;
-            padding: 0 40px;
             text-align: center;
+            padding: 2rem;
+            margin-top: 4rem;
         }
-
-        .footer-content p {
-            margin-bottom: 20px;
-            text-align: center;
-        }
-
-        .footer-links {
-            display: flex;
-            justify-content: center;
-            gap: 30px;
-            flex-wrap: wrap;
-        }
-
-        .footer-links a {
+        
+        footer p {
             color: #DAA520;
+            margin-bottom: 1rem;
+        }
+        
+        footer nav a {
+            color: #DAA520;
+            margin: 0 1rem;
             text-decoration: none;
-            transition: color 0.3s ease;
         }
-
-        .footer-links a:hover {
-            color: #FFC125;
-        }
-
-        /* Responsive */
+        
         @media (max-width: 768px) {
-            .nav-container {
-                padding: 0 20px;
+            nav ul {
+                flex-direction: column;
+                gap: 1rem;
             }
-
-            .nav-links {
-                gap: 15px;
-                font-size: 0.9em;
-            }
-
-            .page-header {
-                padding: 40px 20px;
-            }
-
-            .page-header h1 {
-                font-size: 2em;
-            }
-
-            .container {
-                padding: 40px 20px;
-            }
-
-            .catalogue-grid {
+            
+            .books-grid {
                 grid-template-columns: 1fr;
-                gap: 30px;
             }
         }
     </style>
 </head>
 <body>
-    <!-- Navigation -->
-    <nav>
-        <div class="nav-container">
-            <a href="index.html" class="logo">
-                <svg class="logo-circle" width="60" height="60" viewBox="0 0 60 60">
-                    <circle cx="30" cy="30" r="28" fill="none" stroke="#DAA520" stroke-width="2"/>
-                    <text x="30" y="38" font-family="Georgia" font-size="24" fill="#DAA520" text-anchor="middle">ML</text>
-                </svg>
-                <span class="logo-text">Mania Libris</span>
-            </a>
-            <ul class="nav-links">
-                <li><a href="index.html">Accueil / Início</a></li>
-                <li><a href="catalogo.html">Catalogue / Catálogo</a></li>
-                <li><a href="contato.html">Contact / Contato</a></li>
+    <header>
+        <nav>
+            <ul>
+                <li><a href="index.html">Início</a></li>
+                <li><a href="catalogo.html">Catálogo</a></li>
+                <li><a href="recursos.html">Recursos</a></li>
+                <li><a href="contato.html">Contato</a></li>
             </ul>
-        </div>
-    </nav>
+        </nav>
+    </header>
 
-    <!-- Page Header -->
-    <div class="page-header">
-        <h1>Catalogue</h1>
-        <p>Explorez nos publications théologiques - Explore nossas publicações teológicas</p>
-    </div>
+    <main>
+        <section class="page-title">
+            <h1>Catálogo</h1>
+            <p>Explorez nos publications théologiques en français et portugais</p>
+        </section>
 
-    <!-- Main Content -->
-    <div class="container">
-        <!-- Catalogue Grid -->
-        <div class="catalogue-grid">
-            <!-- Le Côté d'Adam -->
+        <div class="books-grid">
+            <!-- Livre 1: Tua Vontade (PT) -->
             <div class="book-card">
-                <h3>Le Côté d'Adam</h3>
-                <p class="author">par Stéphane Jean Cassani</p>
-                <p class="language">Langue: Français</p>
-                <p class="description">Une nouvelle lecture linguistique, exégétique et théologique de Genèse 2. Analyse rigoureuse du mot hébreu "tsela" (צלע) révélant l'égalité fondamentale entre l'homme et la femme. Une perspective théologique renouvelée sur l'égalité ontologique.</p>
-                <a href="le-cote-adam.html" class="btn">En savoir plus</a>
+                <h3>Tua Vontade</h3>
+                <p class="author">Stéphane Jean Cassani</p>
+                <p class="language">Língua: Português</p>
+                <p class="description">
+                    Um diálogo profundo sobre inteligência artificial, teologia e escatologia. Este livro explora as questões fundamentais sobre poder, livre-arbítrio e o papel da tecnologia na construção do Reino de Deus. Uma reflexão contemporânea que une fé cristã e inovação tecnológica, questionando o futuro da humanidade à luz das Escrituras.
+                </p>
+                <a href="tua-vontade.html" class="btn">Saiba mais</a>
             </div>
 
-            <!-- O Lado de Adão -->
+            <!-- Livre 2: Ta Volonté (FR) -->
+            <div class="book-card">
+                <h3>Ta Volonté</h3>
+                <p class="author">Stéphane Jean Cassani</p>
+                <p class="language">Langue: Français</p>
+                <p class="description">
+                    Un dialogue approfondi sur l'intelligence artificielle, la théologie et l'eschatologie. Ce livre explore les questions fondamentales du pouvoir, du libre arbitre et du rôle de la technologie dans la construction du Royaume de Dieu. Une réflexion contemporaine qui unit foi chrétienne et innovation technologique, questionnant l'avenir de l'humanité à la lumière des Écritures.
+                </p>
+                <a href="ta-volonte.html" class="btn">En savoir plus</a>
+            </div>
+
+            <!-- Livre 3: O Lado de Adão (PT) -->
             <div class="book-card">
                 <h3>O Lado de Adão</h3>
-                <p class="author">por Stéphane Jean Cassani</p>
-                <p class="language">Idioma: Português (Brasil)</p>
-                <p class="description">Uma nova leitura linguística, exegética e teológica de Gênesis 2. Análise rigorosa da palavra hebraica "tsela" (צלע) revelando a igualdade fundamental entre homem e mulher. Uma perspectiva teológica renovada sobre a igualdade ontológica.</p>
+                <p class="author">Stéphane Jean Cassani</p>
+                <p class="language">Língua: Português</p>
+                <p class="description">
+                    Uma análise exegética inovadora de Gênesis 2:21-22, explorando a tradução hebraica da palavra "tsela" e suas implicações teológicas. Este estudo revela como uma compreensão mais precisa do texto original transforma nossa percepção da criação de Eva e da complementaridade entre homem e mulher no plano divino.
+                </p>
                 <a href="o-lado-de-adao.html" class="btn">Saiba mais</a>
             </div>
 
-            <!-- Tua Vontade -->
+            <!-- Livre 4: Le Côté d'Adam (FR) -->
             <div class="book-card">
-                <h3>Tua Vontade</h3>
-                <p class="author">por Stéphane Jean Cassani</p>
-                <p class="language">Idioma: Português (Brasil)</p>
-                <p class="description">Diálogos teológicos sobre IA, Poder e a Alma Humana. Uma jornada teológica pela convergência entre Fé, Tecnologia e Escatologia. Reflexão profunda sobre o futuro da humanidade através da perspectiva cristã e da inteligência artificial.</p>
-                <a href="tua-vontade.html" class="btn">Saiba mais</a>
+                <h3>Le Côté d'Adam</h3>
+                <p class="author">Stéphane Jean Cassani</p>
+                <p class="language">Langue: Français</p>
+                <p class="description">
+                    Une analyse exégétique novatrice de Genèse 2:21-22, explorant la traduction hébraïque du mot "tsela" et ses implications théologiques. Cette étude révèle comment une compréhension plus précise du texte original transforme notre perception de la création d'Ève et de la complémentarité entre homme et femme dans le plan divin.
+                </p>
+                <a href="le-cote-d-adam.html" class="btn">En savoir plus</a>
             </div>
         </div>
-    </div>
+    </main>
 
-    <!-- Footer -->
     <footer>
-        <div class="footer-content">
-            <p>&copy; 2025 Mania Libris. Tous droits réservés / Todos os direitos reservados.</p>
-            <div class="footer-links">
-                <a href="politica-privacidade.html">Politique de Confidentialité / Política de Privacidade</a>
-                <a href="aviso-legal.html">Mentions Légales / Aviso Legal</a>
-            </div>
-        </div>
+        <p>&copy; 2025 Mania Libris. Tous droits réservés.</p>
+        <nav>
+            <a href="politica-privacidade.html">Politique de Confidentialité</a>
+            <a href="aviso-legal.html">Mentions Légales</a>
+        </nav>
     </footer>
 </body>
 </html>
