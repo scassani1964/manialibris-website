@@ -3,254 +3,336 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="Recursos Bíblicos Mania Libris - Applications interactives de promesses bibliques en français et portugais">
-    <meta name="keywords" content="promesses bibliques, applications bibliques, ressources chrétiennes, français, portugais">
-    <title>Recursos - Mania Libris</title>
+    <meta name="description" content="Recursos bíblicos interativos de Mania Libris - Explore promessas bíblicas através de aplicações web em português e francês.">
+    <meta name="keywords" content="recursos bíblicos, promessas bíblicas, aplicações cristãs, Mania Libris, ferramentas teológicas">
+    <title>Recursos Bíblicos - Mania Libris</title>
     <style>
         * {
             margin: 0;
             padding: 0;
             box-sizing: border-box;
         }
-        
+
         body {
-            font-family: Georgia, "Times New Roman", Times, serif;
+            font-family: Georgia, 'Times New Roman', Times, serif;
             background-color: #000;
             color: #fff;
             line-height: 1.6;
         }
-        
+
         header {
             background-color: #000;
+            padding: 2rem 1rem;
             border-bottom: 2px solid #DAA520;
-            padding: 1rem 0;
+            position: relative;
         }
-        
+
+        h1 {
+            color: #DAA520;
+            text-align: center;
+            font-size: 2.5rem;
+            margin-bottom: 0.5rem;
+        }
+
+        .tagline {
+            text-align: center;
+            color: #fff;
+            font-size: 1.2rem;
+            font-style: italic;
+        }
+
+        .language-selector {
+            position: absolute;
+            top: 1rem;
+            right: 1rem;
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+
+        .lang-link {
+            color: #DAA520;
+            text-decoration: none;
+            font-weight: bold;
+            font-size: 1rem;
+            padding: 0.3rem 0.6rem;
+            border: 1px solid #DAA520;
+            border-radius: 3px;
+            transition: all 0.3s ease;
+        }
+
+        .lang-link:hover {
+            background-color: #DAA520;
+            color: #000;
+        }
+
+        .lang-link.active {
+            background-color: #DAA520;
+            color: #000;
+        }
+
+        .separator {
+            color: #DAA520;
+            font-weight: bold;
+        }
+
         nav {
-            max-width: 1200px;
-            margin: 0 auto;
-            padding: 0 20px;
+            background-color: #000;
+            padding: 1rem;
+            border-bottom: 1px solid #DAA520;
         }
-        
+
         nav ul {
             list-style: none;
             display: flex;
             justify-content: center;
             gap: 2rem;
+            flex-wrap: wrap;
         }
-        
+
         nav a {
             color: #DAA520;
             text-decoration: none;
             font-size: 1.1rem;
-            transition: opacity 0.3s;
+            font-weight: bold;
+            transition: color 0.3s;
         }
-        
+
         nav a:hover {
-            opacity: 0.7;
+            color: #fff;
         }
-        
-        .page-title {
+
+        main {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 3rem 1rem;
+        }
+
+        .hero {
             text-align: center;
-            padding: 3rem 20px 2rem;
+            padding: 3rem 1rem;
+            margin-bottom: 3rem;
         }
-        
-        .page-title h1 {
+
+        .hero h2 {
             color: #DAA520;
-            font-size: 2.5rem;
+            font-size: 2rem;
             margin-bottom: 1rem;
         }
-        
-        .page-title p {
+
+        .hero p {
             font-size: 1.2rem;
+            line-height: 1.8;
             max-width: 800px;
             margin: 0 auto;
-            line-height: 1.8;
         }
-        
-        .resources-container {
-            max-width: 1000px;
-            margin: 3rem auto;
-            padding: 0 20px;
+
+        .resources-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
+            gap: 3rem;
+            margin-top: 3rem;
         }
-        
+
         .resource-card {
             background-color: #111;
             border: 2px solid #DAA520;
-            padding: 2rem;
+            padding: 2.5rem;
             border-radius: 8px;
-            margin-bottom: 2rem;
-            transition: transform 0.3s;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
         }
-        
+
         .resource-card:hover {
             transform: translateY(-5px);
+            box-shadow: 0 10px 30px rgba(218, 165, 32, 0.3);
         }
-        
-        .resource-card h2 {
+
+        .resource-card h3 {
             color: #DAA520;
             font-size: 1.8rem;
             margin-bottom: 1rem;
         }
-        
-        .resource-card .language {
-            color: #999;
-            font-style: italic;
+
+        .resource-card .language-badge {
+            display: inline-block;
+            background-color: rgba(218, 165, 32, 0.2);
+            color: #DAA520;
+            padding: 0.3rem 0.8rem;
+            border-radius: 15px;
+            font-size: 0.9rem;
             margin-bottom: 1rem;
         }
-        
+
         .resource-card p {
+            font-size: 1.1rem;
             line-height: 1.8;
             margin-bottom: 1.5rem;
-            text-align: justify;
         }
-        
+
         .resource-card ul {
-            margin: 1rem 0 1.5rem 2rem;
-            line-height: 1.8;
+            list-style: none;
+            margin-bottom: 2rem;
         }
-        
-        .resource-card ul li {
-            margin-bottom: 0.5rem;
+
+        .resource-card li {
+            padding: 0.5rem 0;
+            padding-left: 1.5rem;
+            position: relative;
         }
-        
+
+        .resource-card li:before {
+            content: "▸";
+            color: #DAA520;
+            font-weight: bold;
+            position: absolute;
+            left: 0;
+        }
+
         .btn {
             display: inline-block;
             background-color: #DAA520;
             color: #000;
-            padding: 1rem 2rem;
+            padding: 0.8rem 1.5rem;
             text-decoration: none;
             font-weight: bold;
             border-radius: 5px;
-            transition: opacity 0.3s;
-            font-size: 1.1rem;
+            transition: all 0.3s ease;
         }
-        
+
         .btn:hover {
-            opacity: 0.8;
+            background-color: #fff;
+            transform: scale(1.05);
         }
-        
-        .intro-section {
-            max-width: 900px;
-            margin: 2rem auto 3rem;
-            padding: 0 20px;
-            text-align: center;
-        }
-        
-        .intro-section p {
-            font-size: 1.1rem;
-            line-height: 1.8;
-            margin-bottom: 1rem;
-        }
-        
+
         footer {
             background-color: #000;
             border-top: 2px solid #DAA520;
+            padding: 2rem 1rem;
             text-align: center;
-            padding: 2rem;
             margin-top: 4rem;
         }
-        
+
         footer p {
-            color: #DAA520;
+            color: #fff;
             margin-bottom: 1rem;
         }
-        
+
+        footer nav {
+            border: none;
+            padding: 0;
+        }
+
         footer nav a {
             color: #DAA520;
             margin: 0 1rem;
-            text-decoration: none;
         }
-        
+
         @media (max-width: 768px) {
+            h1 {
+                font-size: 2rem;
+            }
+
+            .tagline {
+                font-size: 1rem;
+            }
+
+            .language-selector {
+                position: static;
+                justify-content: center;
+                margin-top: 1rem;
+            }
+
             nav ul {
                 flex-direction: column;
                 gap: 1rem;
             }
-            
-            .page-title h1 {
-                font-size: 2rem;
+
+            .hero h2 {
+                font-size: 1.5rem;
+            }
+
+            .resources-grid {
+                grid-template-columns: 1fr;
             }
         }
     </style>
 </head>
 <body>
     <header>
-        <nav>
-            <ul>
-                <li><a href="index.html">Início</a></li>
-                <li><a href="catalogo.html">Catálogo</a></li>
-                <li><a href="recursos.html">Recursos</a></li>
-                <li><a href="contato.html">Contato</a></li>
-            </ul>
-        </nav>
+        <div class="language-selector">
+            <a href="recursos.html" class="lang-link active">PT</a>
+            <span class="separator">|</span>
+            <a href="ressources.html" class="lang-link">FR</a>
+        </div>
+        
+        <h1>Mania Libris</h1>
+        <p class="tagline">Editora Teológica - Palavra Escrita, Fé Viva</p>
     </header>
 
+    <nav>
+        <ul>
+            <li><a href="index.html">Início</a></li>
+            <li><a href="catalogo.html">Catálogo</a></li>
+            <li><a href="recursos.html">Recursos</a></li>
+            <li><a href="contato.html">Contato</a></li>
+        </ul>
+    </nav>
+
     <main>
-        <section class="page-title">
-            <h1>Recursos Bíblicos</h1>
-            <p>Applications interactives pour explorer les promesses bibliques en français et portugais</p>
+        <section class="hero">
+            <h2>Recursos Bíblicos</h2>
+            <p>
+                Explore as promessas de Deus através de aplicações interativas desenvolvidas 
+                para enriquecer seu estudo bíblico e fortalecer sua fé. Ferramentas digitais 
+                que combinam tecnologia moderna com a sabedoria eterna das Escrituras.
+            </p>
         </section>
 
-        <div class="intro-section">
-            <p>
-                Mania Libris propose des outils numériques pour enrichir votre étude biblique. Ces applications web gratuites vous permettent d'explorer les promesses de Dieu organisées par thèmes spirituels.
-            </p>
-            <p>
-                Chaque application offre une interface intuitive pour découvrir les versets bibliques selon vos besoins spirituels du moment : consolation, sagesse, force, espérance, foi et bien plus encore.
-            </p>
-        </div>
-
-        <div class="resources-container">
-            <!-- Application Portugaise -->
+        <div class="resources-grid">
             <div class="resource-card">
-                <h2>Promessas Bíblicas</h2>
-                <p class="language">Aplicação em Português</p>
+                <h3>Promessas Bíblicas</h3>
+                <span class="language-badge">Português</span>
                 <p>
-                    Uma ferramenta interativa para explorar as promessas de Deus organizadas por categorias espirituais. Esta aplicação permite que você descubra versículos bíblicos relevantes para cada situação da vida.
+                    Uma aplicação web interativa que organiza centenas de promessas bíblicas 
+                    por categorias temáticas. Explore promessas sobre paz, provisão, proteção, 
+                    sabedoria, cura e muito mais, todas extraídas diretamente das Escrituras.
                 </p>
-                <p><strong>Funcionalidades:</strong></p>
                 <ul>
-                    <li>Mais de 100 promessas bíblicas cuidadosamente selecionadas</li>
-                    <li>Organização por 12 categorias espirituais temáticas</li>
+                    <li>35+ categorias temáticas</li>
+                    <li>Centenas de promessas organizadas</li>
                     <li>Interface intuitiva e responsiva</li>
-                    <li>Acesso gratuito e sem necessidade de registro</li>
-                    <li>Funciona em qualquer dispositivo (desktop, tablet, smartphone)</li>
+                    <li>Acesso gratuito e ilimitado</li>
+                    <li>Ideal para estudo devocional</li>
                 </ul>
-                <p>
-                    <strong>Categorias disponíveis:</strong> Consolação, Sabedoria, Força, Esperança, Fé, Oração, Proteção, Perdão, Amor, Paz, Orientação e Vitória.
-                </p>
-                <a href="https://scassani1964.github.io/promessas-biblicas" target="_blank" class="btn">Acessar Aplicação (PT)</a>
+                <a href="https://scassani1964.github.io/promessas-biblicas" target="_blank" class="btn">Acessar Aplicação</a>
             </div>
 
-            <!-- Application Française -->
             <div class="resource-card">
-                <h2>Promesses Bibliques</h2>
-                <p class="language">Application en Français</p>
+                <h3>Promesses Bibliques</h3>
+                <span class="language-badge">Français</span>
                 <p>
-                    Un outil interactif pour explorer les promesses de Dieu organisées par catégories spirituelles. Cette application vous permet de découvrir des versets bibliques pertinents pour chaque situation de la vie.
+                    Une application web interactive qui organise des centaines de promesses 
+                    bibliques par catégories thématiques. Explorez les promesses concernant 
+                    la paix, la provision, la protection, la sagesse, la guérison et bien plus 
+                    encore, toutes extraites directement des Écritures.
                 </p>
-                <p><strong>Fonctionnalités:</strong></p>
                 <ul>
-                    <li>Plus de 100 promesses bibliques soigneusement sélectionnées</li>
-                    <li>Organisation par 12 catégories spirituelles thématiques</li>
+                    <li>35+ catégories thématiques</li>
+                    <li>Des centaines de promesses organisées</li>
                     <li>Interface intuitive et responsive</li>
-                    <li>Accès gratuit et sans inscription</li>
-                    <li>Fonctionne sur tous les appareils (ordinateur, tablette, smartphone)</li>
+                    <li>Accès gratuit et illimité</li>
+                    <li>Idéal pour l'étude dévotionnelle</li>
                 </ul>
-                <p>
-                    <strong>Catégories disponibles:</strong> Consolation, Sagesse, Force, Espérance, Foi, Prière, Protection, Pardon, Amour, Paix, Guidance et Victoire.
-                </p>
-                <a href="https://scassani1964.github.io/promesses-bibliques" target="_blank" class="btn">Accéder à l'Application (FR)</a>
+                <a href="https://scassani1964.github.io/promesses-bibliques" target="_blank" class="btn">Accéder à l'Application</a>
             </div>
         </div>
     </main>
 
     <footer>
-        <p>&copy; 2025 Mania Libris. Tous droits réservés.</p>
+        <p>&copy; 2025 Mania Libris. Todos os direitos reservados.</p>
         <nav>
-            <a href="politica-privacidade.html">Politique de Confidentialité</a>
-            <a href="aviso-legal.html">Mentions Légales</a>
+            <a href="politica-privacidade.html">Política de Privacidade</a>
+            <a href="aviso-legal.html">Aviso Legal</a>
         </nav>
     </footer>
 </body>
