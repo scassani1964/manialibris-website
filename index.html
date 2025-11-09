@@ -3,200 +3,393 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="Mania Libris - Maison d'édition théologique proposant des livres en français et portugais sur la théologie, l'exégèse biblique et la spiritualité chrétienne.">
-    <meta name="keywords" content="édition théologique, livres chrétiens, théologie, exégèse biblique, Stéphane Jean Cassani, français, portugais">
-    <title>Mania Libris - Édition Théologique</title>
+    <meta name="description" content="Mania Libris - Editora teológica especializada em obras sobre teologia, escatologia e espiritualidade cristã em português e francês.">
+    <meta name="keywords" content="teologia, livros cristãos, escatologia, espiritualidade, editora cristã, Mania Libris">
+    <title>Mania Libris - Editora Teológica</title>
     <style>
         * {
             margin: 0;
             padding: 0;
             box-sizing: border-box;
         }
-        
+
         body {
-            font-family: Georgia, "Times New Roman", Times, serif;
+            font-family: Georgia, 'Times New Roman', Times, serif;
             background-color: #000;
             color: #fff;
             line-height: 1.6;
         }
-        
+
         header {
             background-color: #000;
+            padding: 2rem 1rem;
             border-bottom: 2px solid #DAA520;
-            padding: 1rem 0;
+            position: relative;
         }
-        
+
+        h1 {
+            color: #DAA520;
+            text-align: center;
+            font-size: 2.5rem;
+            margin-bottom: 0.5rem;
+        }
+
+        .tagline {
+            text-align: center;
+            color: #fff;
+            font-size: 1.2rem;
+            font-style: italic;
+        }
+
+        /* Sélecteur de langue */
+        .language-selector {
+            position: absolute;
+            top: 1rem;
+            right: 1rem;
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+
+        .lang-link {
+            color: #DAA520;
+            text-decoration: none;
+            font-weight: bold;
+            font-size: 1rem;
+            padding: 0.3rem 0.6rem;
+            border: 1px solid #DAA520;
+            border-radius: 3px;
+            transition: all 0.3s ease;
+        }
+
+        .lang-link:hover {
+            background-color: #DAA520;
+            color: #000;
+        }
+
+        .lang-link.active {
+            background-color: #DAA520;
+            color: #000;
+        }
+
+        .separator {
+            color: #DAA520;
+            font-weight: bold;
+        }
+
         nav {
-            max-width: 1200px;
-            margin: 0 auto;
-            padding: 0 20px;
+            background-color: #000;
+            padding: 1rem;
+            border-bottom: 1px solid #DAA520;
         }
-        
+
         nav ul {
             list-style: none;
             display: flex;
             justify-content: center;
             gap: 2rem;
+            flex-wrap: wrap;
         }
-        
+
         nav a {
             color: #DAA520;
             text-decoration: none;
             font-size: 1.1rem;
-            transition: opacity 0.3s;
+            font-weight: bold;
+            transition: color 0.3s;
         }
-        
+
         nav a:hover {
-            opacity: 0.7;
+            color: #fff;
         }
-        
+
+        main {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 3rem 1rem;
+        }
+
         .hero {
             text-align: center;
-            padding: 4rem 20px;
-            max-width: 900px;
-            margin: 0 auto;
+            padding: 3rem 1rem;
+            margin-bottom: 3rem;
         }
-        
-        .hero h1 {
+
+        .hero h2 {
             color: #DAA520;
-            font-size: 3rem;
+            font-size: 2rem;
             margin-bottom: 1rem;
         }
-        
+
         .hero p {
-            font-size: 1.3rem;
-            margin-bottom: 2rem;
+            font-size: 1.2rem;
             line-height: 1.8;
+            max-width: 800px;
+            margin: 0 auto 2rem auto;
         }
-        
+
         .section {
-            max-width: 1000px;
-            margin: 3rem auto;
-            padding: 0 20px;
+            margin-bottom: 4rem;
         }
-        
+
         .section h2 {
             color: #DAA520;
             font-size: 2rem;
             margin-bottom: 1.5rem;
-            text-align: center;
+            border-bottom: 2px solid #DAA520;
+            padding-bottom: 0.5rem;
         }
-        
+
         .section p {
             font-size: 1.1rem;
-            line-height: 1.8;
             margin-bottom: 1rem;
-            text-align: justify;
+            line-height: 1.8;
         }
-        
-        .cta {
-            text-align: center;
-            margin: 3rem 0;
+
+        .featured-books {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+            margin-top: 2rem;
         }
-        
+
+        .book-card {
+            background-color: #111;
+            border: 2px solid #DAA520;
+            padding: 2rem;
+            border-radius: 8px;
+            transition: transform 0.3s ease;
+        }
+
+        .book-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 5px 20px rgba(218, 165, 32, 0.3);
+        }
+
+        .book-card h3 {
+            color: #DAA520;
+            font-size: 1.5rem;
+            margin-bottom: 0.5rem;
+        }
+
+        .book-card .author {
+            color: #DAA520;
+            font-style: italic;
+            margin-bottom: 1rem;
+        }
+
+        .book-card .language {
+            color: #fff;
+            font-size: 0.9rem;
+            margin-bottom: 1rem;
+            opacity: 0.8;
+        }
+
+        .book-card p {
+            margin-bottom: 1.5rem;
+        }
+
         .btn {
             display: inline-block;
             background-color: #DAA520;
             color: #000;
-            padding: 1rem 2rem;
+            padding: 0.8rem 1.5rem;
             text-decoration: none;
-            font-size: 1.1rem;
             font-weight: bold;
             border-radius: 5px;
-            transition: opacity 0.3s;
+            transition: all 0.3s ease;
         }
-        
+
         .btn:hover {
-            opacity: 0.8;
+            background-color: #fff;
+            transform: scale(1.05);
         }
-        
+
+        .cta-section {
+            text-align: center;
+            padding: 3rem 1rem;
+            background-color: #111;
+            border: 2px solid #DAA520;
+            border-radius: 8px;
+            margin-top: 3rem;
+        }
+
+        .cta-section h2 {
+            color: #DAA520;
+            font-size: 2rem;
+            margin-bottom: 1rem;
+        }
+
+        .cta-section p {
+            font-size: 1.2rem;
+            margin-bottom: 2rem;
+        }
+
         footer {
             background-color: #000;
             border-top: 2px solid #DAA520;
+            padding: 2rem 1rem;
             text-align: center;
-            padding: 2rem;
             margin-top: 4rem;
         }
-        
+
         footer p {
-            color: #DAA520;
+            color: #fff;
             margin-bottom: 1rem;
         }
-        
+
+        footer nav {
+            border: none;
+            padding: 0;
+        }
+
         footer nav a {
             color: #DAA520;
             margin: 0 1rem;
-            text-decoration: none;
         }
-        
+
         @media (max-width: 768px) {
+            h1 {
+                font-size: 2rem;
+            }
+
+            .tagline {
+                font-size: 1rem;
+            }
+
+            .language-selector {
+                position: static;
+                justify-content: center;
+                margin-top: 1rem;
+            }
+
             nav ul {
                 flex-direction: column;
                 gap: 1rem;
             }
-            
-            .hero h1 {
-                font-size: 2rem;
+
+            .hero h2 {
+                font-size: 1.5rem;
             }
-            
-            .hero p {
-                font-size: 1.1rem;
+
+            .featured-books {
+                grid-template-columns: 1fr;
             }
         }
     </style>
 </head>
 <body>
     <header>
-        <nav>
-            <ul>
-                <li><a href="index.html">Início</a></li>
-                <li><a href="catalogo.html">Catálogo</a></li>
-                <li><a href="recursos.html">Recursos</a></li>
-                <li><a href="contato.html">Contato</a></li>
-            </ul>
-        </nav>
+        <!-- Sélecteur de langue -->
+        <div class="language-selector">
+            <a href="index.html" class="lang-link active">PT</a>
+            <span class="separator">|</span>
+            <a href="index-fr.html" class="lang-link">FR</a>
+        </div>
+        
+        <h1>Mania Libris</h1>
+        <p class="tagline">Editora Teológica - Palavra Escrita, Fé Viva</p>
     </header>
+
+    <nav>
+        <ul>
+            <li><a href="index.html">Início</a></li>
+            <li><a href="catalogo.html">Catálogo</a></li>
+            <li><a href="contato.html">Contato</a></li>
+        </ul>
+    </nav>
 
     <main>
         <section class="hero">
-            <h1>Mania Libris</h1>
-            <p>Édition théologique bilingue - Livres chrétiens en français et portugais</p>
-            <p>Une maison d'édition dédiée à la réflexion théologique profonde, l'exégèse biblique rigoureuse et la spiritualité chrétienne authentique.</p>
-        </section>
-
-        <section class="section">
-            <h2>Notre Mission</h2>
+            <h2>Bem-vindo à Mania Libris</h2>
             <p>
-                Mania Libris est une maison d'édition spécialisée dans la publication d'ouvrages théologiques de haute qualité en français et en portugais. Notre mission est de rendre accessible une théologie bibliquement fidèle, intellectuellement rigoureuse et spirituellement enrichissante.
-            </p>
-            <p>
-                Nous croyons que la foi chrétienne mérite une réflexion approfondie qui honore à la fois l'Écriture sainte et l'intelligence humaine. Nos publications explorent les grandes questions de la foi, de l'exégèse biblique, de l'eschatologie et de la vie chrétienne dans le monde contemporain.
-            </p>
-            <p>
-                Chaque ouvrage publié par Mania Libris reflète un engagement envers l'excellence littéraire, la précision théologique et la pertinence spirituelle. Nous servons les lecteurs francophones et lusophones qui cherchent à approfondir leur compréhension de la foi chrétienne.
+                Somos uma editora teológica dedicada à publicação de obras que exploram as profundezas da fé cristã, 
+                da escatologia e da espiritualidade contemporânea. Nossa missão é tornar a teologia acessível 
+                e relevante para o mundo moderno, oferecendo livros em português e francês que inspiram, desafiam 
+                e transformam.
             </p>
         </section>
 
         <section class="section">
-            <h2>Nos Publications</h2>
+            <h2>Nossa Missão</h2>
             <p>
-                Notre catalogue comprend actuellement quatre ouvrages théologiques majeurs explorant des thématiques essentielles de la foi chrétienne : l'intersection entre théologie et intelligence artificielle, ainsi que l'exégèse approfondie du récit de la création dans le livre de la Genèse.
+                Na Mania Libris, acreditamos que a palavra escrita tem o poder de transformar vidas e moldar gerações. 
+                Publicamos obras que unem rigor teológico com relevância cultural, explorando temas como a interseção 
+                entre fé e tecnologia, a natureza da salvação, e os desafios da espiritualidade no século XXI.
             </p>
             <p>
-                Tous nos livres sont disponibles en format numérique sur Amazon Kindle, permettant une diffusion mondiale et un accès immédiat aux lecteurs du monde entier.
+                Nossos autores são pensadores comprometidos com a verdade bíblica e com o diálogo honesto sobre 
+                questões difíceis. Cada livro que publicamos é uma jornada de descoberta, reflexão e crescimento espiritual.
             </p>
         </section>
 
-        <div class="cta">
-            <a href="catalogo.html" class="btn">Découvrir le Catalogue</a>
-        </div>
+        <section class="section">
+            <h2>Livros em Destaque</h2>
+            <div class="featured-books">
+                <div class="book-card">
+                    <h3>Tua Vontade</h3>
+                    <p class="author">Stéphane Cassani</p>
+                    <p class="language">Língua: Português</p>
+                    <p>
+                        Uma exploração profunda da interseção entre inteligência artificial, teologia bíblica 
+                        e escatologia. Este livro desafia as concepções tradicionais sobre o destino humano, 
+                        propondo uma visão annihilacionista fundamentada nas Escrituras e no diálogo com a 
+                        tecnologia contemporânea.
+                    </p>
+                    <a href="tua-vontade.html" class="btn">Saiba mais</a>
+                </div>
+
+                <div class="book-card">
+                    <h3>Ta Volonté</h3>
+                    <p class="author">Stéphane Cassani</p>
+                    <p class="language">Langue : Français</p>
+                    <p>
+                        Une exploration approfondie de l'intersection entre l'intelligence artificielle, 
+                        la théologie biblique et l'eschatologie. Ce livre remet en question les conceptions 
+                        traditionnelles sur le destin humain, proposant une vision annihilationniste fondée 
+                        sur les Écritures et le dialogue avec la technologie contemporaine.
+                    </p>
+                    <a href="ta-volonte.html" class="btn">En savoir plus</a>
+                </div>
+
+                <div class="book-card">
+                    <h3>O Lado de Adão</h3>
+                    <p class="author">Stéphane Cassani</p>
+                    <p class="language">Língua: Português</p>
+                    <p>
+                        Uma análise exegética profunda sobre a criação da mulher a partir do lado de Adão. 
+                        Este estudo bíblico explora o significado teológico da expressão hebraica "tsela" 
+                        e suas implicações para compreender a relação entre homem e mulher no plano divino.
+                    </p>
+                    <a href="o-lado-de-adao.html" class="btn">Saiba mais</a>
+                </div>
+
+                <div class="book-card">
+                    <h3>Le Côté d'Adam</h3>
+                    <p class="author">Stéphane Cassani</p>
+                    <p class="language">Langue : Français</p>
+                    <p>
+                        Une analyse exégétique approfondie de la création de la femme à partir du côté d'Adam. 
+                        Cette étude biblique explore la signification théologique de l'expression hébraïque "tsela" 
+                        et ses implications pour comprendre la relation entre l'homme et la femme dans le plan divin.
+                    </p>
+                    <a href="le-cote-d-adam.html" class="btn">En savoir plus</a>
+                </div>
+            </div>
+        </section>
+
+        <section class="cta-section">
+            <h2>Explore Nossa Coleção Completa</h2>
+            <p>Descubra todos os nossos títulos e encontre o livro perfeito para sua jornada espiritual.</p>
+            <a href="catalogo.html" class="btn">Ver Catálogo Completo</a>
+        </section>
     </main>
 
     <footer>
-        <p>&copy; 2025 Mania Libris. Tous droits réservés.</p>
+        <p>&copy; 2025 Mania Libris. Todos os direitos reservados.</p>
         <nav>
-            <a href="politica-privacidade.html">Politique de Confidentialité</a>
-            <a href="aviso-legal.html">Mentions Légales</a>
+            <a href="politica-privacidade.html">Política de Privacidade</a>
+            <a href="aviso-legal.html">Aviso Legal</a>
         </nav>
     </footer>
 </body>
